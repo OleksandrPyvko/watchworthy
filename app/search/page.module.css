@@ -1,0 +1,17 @@
+.image-wrapper {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px; /* Spacing between items */
+  padding: 8rem;
+}
+
+.card {
+  background-color: rgb(43, 42, 42);
+}
