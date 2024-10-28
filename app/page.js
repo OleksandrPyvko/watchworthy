@@ -1,5 +1,6 @@
 import ImageSlides from "@/components/image-slides/image-slides";
 import classes from "./page.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -15,6 +16,10 @@ export default function Home() {
           mark them as Watched with your own ratings to keep everything
           organized. Discover what’s next on your list!
         </p>
+
+        <Link href="/search" className={classes.explore}>
+          Popular
+        </Link>
       </div>
     </div>
   );

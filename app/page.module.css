@@ -10,6 +10,7 @@
   max-width: 50rem;
   color: #ddd6cb;
   font-size: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .main-container {
@@ -29,4 +30,20 @@
   -webkit-text-fill-color: transparent;
   font-family: "Montserrat", sans-serif;
   font-size: 4rem;
+}
+
+.explore {
+  border: 0;
+  padding: 0.75rem 4rem;
+  background: linear-gradient(90deg, #2a6cf9, #05b0ff);
+  border: none;
+  color: #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.25rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  margin-left: 3rem;
+  margin-top: 4rem;
+  text-decoration: none;
 }
