@@ -10,10 +10,10 @@ function Navigation() {
         </Link>
       </li>
       <li>
-        <Link href="watch-later">Watch later</Link>
+        <Link href="/watch-later">Watch later</Link>
       </li>
       <li>
-        <Link href="watched">Watched</Link>
+        <Link href="/watched">Watched</Link>
       </li>
     </ul>
   );

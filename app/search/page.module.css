@@ -4,12 +4,7 @@
   width: 100%;
 }
 
-.movie-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 20px; /* Spacing between items */
-  padding: 8rem;
-}
+
 
 .card {
   background-color: rgb(43, 42, 42);

@@ -16,7 +16,7 @@
 .main-container {
   padding-top: 6rem;
   display: flex;
-  max-width: 80%;
+  max-width: 90%;
   justify-content: center;
   margin: auto;
 }
@@ -46,4 +46,8 @@
   margin-left: 3rem;
   margin-top: 4rem;
   text-decoration: none;
+}
+
+.explore:hover {
+  background: linear-gradient(90deg, #1d49a8, #043b8d);
 }
