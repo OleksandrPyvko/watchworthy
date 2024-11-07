@@ -1,24 +1,14 @@
-import { getPopularMovies } from "@/lib/movies";
-import MovieList from "@/components/movies/movieList";
+import SearchContainer from "@/components/movies/searchContainer";
 import { Suspense } from "react";
-import classes from "./page.module.css";
-
-async function MoviesGrid() {
-  const movies = await getPopularMovies();
-
-  return <MovieList movies={movies} />;
-}
 
 function MoviesPage() {
   return (
     <>
-      <Suspense fallback={<p className={classes.loading}>Loading movies...</p>}>
-        <MoviesGrid />
-      </Suspense>
+      {/* <Suspense fallback={<p className={classes.loading}>Loading movies...</p>}> */}
+      <SearchContainer />
+      {/* </Suspense> */}
     </>
   );
 }
 
 export default MoviesPage;
-
-

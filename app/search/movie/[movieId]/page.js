@@ -22,7 +22,7 @@ async function page({ params }) {
   const genresString = genresList.join(", ");
 
   const trailerData = await getTrailer(movieId);
-  const trailerKey = trailerData.key;
+  const trailerKey = trailerData !== undefined ? trailerData.key : null;
 
   return (
     <div className={classes.details}>
@@ -61,17 +61,21 @@ async function page({ params }) {
         </div>
       </div>
       <div className={classes.trailer}>
-        <iframe
-          // width="560"
-          // height="315"
-          width="720"
-          height="480"
-          src={`https://www.youtube.com/embed/${trailerKey}`}
-          title={`Trailer`}
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+        {trailerKey === null ? (
+          <p style={{ width: "250px" }}>No available trailers 8(</p>
+        ) : (
+          <iframe
+            // width="560"
+            // height="315"
+            width="720"
+            height="480"
+            src={`https://www.youtube.com/embed/${trailerKey}`}
+            title={`Trailer`}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        )}
       </div>
     </div>
   );
