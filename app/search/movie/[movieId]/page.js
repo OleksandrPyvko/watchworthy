@@ -26,7 +26,7 @@ async function page({ params }) {
 
   return (
     <div className={classes.details}>
-      <h1 className={classes.title}>{title}</h1>
+      <h2 className={classes.highlight}>{title}</h2>
       <div className={classes["details-container"]}>
         <div className={classes["image-wrapper"]}>
           <Image
@@ -41,16 +41,16 @@ async function page({ params }) {
             maxWidth: "100%",
           }}
         >
-          <h3 className={classes.tagline}>{tagline}</h3>
+          <h3 className={[classes.tagline, classes.highlight].join(' ')}>{tagline}</h3>
           <div className={classes["details-grid"]}>
-            <span>Rating: </span>
+            <span className={classes.highlight}>Rating: </span>
             <span>{vote_average}</span>
-            <span>Release date: </span> <span>{release_date}</span>
-            <span>Original title: </span> <span>"{original_title}"</span>
-            <span>Genres: </span> <span>{genresString}</span>
-            <span>Runtime: </span> <span>{runtime} min</span>
+            <span className={classes.highlight}>Release date: </span> <span>{release_date}</span>
+            <span className={classes.highlight}>Original title: </span> <span>"{original_title}"</span>
+            <span className={classes.highlight}>Genres: </span> <span>{genresString}</span>
+            <span className={classes.highlight}>Runtime: </span> <span>{runtime} min</span>
           </div>
-          <h3>Overview: </h3>
+          <h3 className={classes.highlight}>Overview: </h3>
           <p
             style={{
               maxWidth: "800px",

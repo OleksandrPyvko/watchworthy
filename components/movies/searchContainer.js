@@ -8,8 +8,6 @@ function SearchContainer() {
   const [selectedGenre, setSelectedGenre] = useState(null);
   const [searchInput, setSearchInput] = useState("");
 
-  console.log(selectedGenre);
-
   return (
     <>
       <Filter

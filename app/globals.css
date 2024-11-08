@@ -9,6 +9,10 @@
 html {
   font-family: "Quicksand", sans-serif;
   color: rgb(230, 230, 230);
+  
+  scrollbar-gutter: stable;
+  scrollbar-width: none;
+
 }
 
 body {

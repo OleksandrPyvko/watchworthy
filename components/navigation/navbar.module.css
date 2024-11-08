@@ -1,6 +1,6 @@
 .nav {
   display: flex;
-  gap: 4rem;
+  gap: 2rem;
 
   justify-content: center;
   align-items: center;
@@ -35,4 +35,33 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.signin {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.712);
+  border: 1px solid rgba(255, 255, 255, 0.479);
+  border-radius: 10px;
+  padding: 11px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  /* margin-left: -40px; */
+  cursor: pointer;
+}
+
+
+
+.user {
+  background: linear-gradient(90deg, #ff8a05, #f9b331);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 18px rgba(248, 190, 42, 0.8);
+}
+
+.user-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }

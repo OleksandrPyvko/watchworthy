@@ -23,23 +23,24 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border: 1px solid #ff8a05;
+  /* border: 1px solid #ff8a05; */
 }
 
-.active {
-  padding: 0.5rem 1rem;
-  background-color: rgba(0, 0, 0, 0);
-  color: #ff8a05;
-  border: 1px solid #f9b331;
+.active-filter {
+  background: linear-gradient(90deg, #ff8a05, #f9b331);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 1px solid #ff8a05;
   border-radius: 6px;
-  cursor: pointer;
+  padding: 0.5rem 1rem;
 }
 
 .genre-button {
   padding: 0.5rem 1rem;
   background-color: rgba(0, 0, 0, 0);
-  color: white;
-  border: 1px solid white;
+  color: rgba(255, 255, 255, 0.795);
+  border: 1px solid rgba(255, 255, 255, 0.466);
   border-radius: 6px;
   cursor: pointer;
 }

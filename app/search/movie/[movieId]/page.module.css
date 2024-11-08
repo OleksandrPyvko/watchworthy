@@ -5,7 +5,10 @@
   font-family: "Montserrat", sans-serif;
   max-width: 80%;
   margin: auto;
+  color: rgba(255, 255, 255, 0.548)
 }
+
+
 
 .image-wrapper {
   position: relative;
@@ -38,4 +41,13 @@
   margin: auto;
   width: min-content;
   padding: 6rem 0;
+}
+
+.highlight {
+  color: rgba(255, 255, 255, 0.801);
+  /* background-clip: text; */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  font-family: "Montserrat", sans-serif;
+  /* font-size: 4rem; */
 }

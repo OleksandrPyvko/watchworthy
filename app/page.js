@@ -3,6 +3,8 @@ import classes from "./page.module.css";
 import Link from "next/link";
 
 export default function Home() {
+  
+
   return (
     <div className={classes["main-container"]}>
       <div className={classes.slideshow}>

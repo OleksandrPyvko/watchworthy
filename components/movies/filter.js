@@ -20,15 +20,15 @@ function Filter({
     queryFn: async () => getGenres(),
   });
 
-  console.log(selectedGenre, "selectedGenre");
-
   function handleClick(value) {
     setSelectedGenre(value);
   }
 
-  function handleChange(e) {    
+  function handleChange(e) {
     setSearchInput(e.target.value);
   }
+
+  console.log("Filter selectedGenre:", selectedGenre);
 
   return (
     <div>
@@ -53,8 +53,8 @@ function Filter({
             <button
               onClick={() => handleClick(genre.id)}
               className={
-                selectedGenre === genre.id
-                  ? `${classes.active} ${classes["genre-button"]}`
+                genre.id === selectedGenre
+                  ? classes["active-filter"]
                   : classes["genre-button"]
               }
             >
@@ -65,6 +65,7 @@ function Filter({
       </ul>
     </div>
   );
+  s;
 }
 
 export default Filter;
