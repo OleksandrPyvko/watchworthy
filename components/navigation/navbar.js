@@ -1,6 +1,6 @@
 import Link from "next/link";
 import classes from "./navbar.module.css";
-import { auth } from "@/app/auth";
+import { auth, signOut } from "@/app/auth";
 
 async function Navigation() {
   const session = await auth();
@@ -43,11 +43,8 @@ async function Navigation() {
       </li>
 
       <li>
-        <Link href='/api/auth/signin' >
-         {/* <button> */}
-          {/* SEPARATE CLIENT COMPONENT */}
+        <Link href={`${session ? "/api/auth/signout" : "/api/auth/signin"}`}>
           {session ? `Sign out` : `Sign in`}
-         {/* </button> */}
         </Link>
       </li>
     </ul>
