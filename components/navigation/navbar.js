@@ -36,14 +36,19 @@ async function Navigation() {
                 {session.user ? `${session.user.name}` : ""}
               </span>
             </>
-          ) : ''}
+          ) : (
+            ""
+          )}
         </div>
       </li>
 
       <li>
-        <button className={classes.signin}>
+        <Link href='/api/auth/signin' >
+         {/* <button> */}
+          {/* SEPARATE CLIENT COMPONENT */}
           {session ? `Sign out` : `Sign in`}
-        </button>
+         {/* </button> */}
+        </Link>
       </li>
     </ul>
   );

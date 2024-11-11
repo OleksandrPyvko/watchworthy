@@ -38,7 +38,7 @@
 
 .genre-button {
   padding: 0.5rem 1rem;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(126, 126, 126, 0.089);
   color: rgba(255, 255, 255, 0.795);
   border: 1px solid rgba(255, 255, 255, 0.466);
   border-radius: 6px;
