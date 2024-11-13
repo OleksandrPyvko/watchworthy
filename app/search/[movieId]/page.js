@@ -1,6 +1,6 @@
-function page({ params }) {
-  const movieID = params.movieId;
-  return <p>{movieID}</p>;
+async function page({ params }) {
+  const { movieId } = await params;
+  return <p>{movieId}</p>;
 }
 
 export default page;

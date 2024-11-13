@@ -6,7 +6,6 @@ import Link from "next/link";
 async function page() {
   const movies = await getPopularMovies();
 
-  console.log(movies);
   return (
     <div className={classes["movie-list"]}>
       {movies.map((movie) => (
@@ -14,7 +13,7 @@ async function page() {
           href={`/search/${movie.id}`}
           className={classes.card}
           key={movie.id}
-          style={{ border: "1px solid #ccc", padding: "1rem" }}
+          
         >
           <div className={classes["image-wrapper"]}>
             <Image
