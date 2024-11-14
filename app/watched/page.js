@@ -1,11 +1,11 @@
-import { auth } from "@/app/auth";
+import { auth } from "../auth";
 
 async function page() {
   const session = await auth();
 
   return (
     <>
-      <h1>Movies you are planning to watch</h1>
+      <h1>Watched movies</h1>
     </>
   );
 }

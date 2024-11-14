@@ -2,17 +2,14 @@
 
 * {
   box-sizing: border-box;
-  
-  
 }
 
 html {
   font-family: "Quicksand", sans-serif;
   color: rgb(230, 230, 230);
-  
+
   scrollbar-gutter: stable;
   scrollbar-width: none;
-
 }
 
 body {
@@ -23,3 +20,4 @@ body {
 main {
   padding: 2rem 12rem;
 }
+

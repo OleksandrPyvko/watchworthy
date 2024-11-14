@@ -31,9 +31,10 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border: 1px solid #ff8a05;
+  border: 2px solid #ff8a05;
   border-radius: 6px;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
 }
 
 .genre-button {
