@@ -1,7 +1,10 @@
 import Link from "next/link";
 import classes from "./navbar.module.css";
+import { auth, signOut } from "@/app/auth";
 
-function Navigation() {
+async function Navigation() {
+  const session = await auth();
+
   return (
     <ul className={classes.nav}>
       <li className={classes["nav-link"]}>
@@ -10,10 +13,39 @@ function Navigation() {
         </Link>
       </li>
       <li>
-        <Link href="watch-later">Watch later</Link>
+        <Link href="/watch-later">Watch later</Link>
       </li>
       <li>
-        <Link href="watched">Watched</Link>
+        <Link href="/watched">Watched</Link>
+      </li>
+      <li>
+        <div className={classes["user-container"]}>
+          {session ? (
+            <>
+              <img
+                style={{
+                  height: "2rem",
+                  border: "1px solid transparent",
+                  borderRadius: "50%",
+                }}
+                src={session.user.image}
+                alt="user image"
+                referrerPolicy="no-referrer"
+              />
+              <span className={classes.user}>
+                {session.user ? `${session.user.name}` : ""}
+              </span>
+            </>
+          ) : (
+            ""
+          )}
+        </div>
+      </li>
+
+      <li>
+        <Link href={`${session ? "/api/auth/signout" : "/api/auth/signin"}`}>
+          {session ? `Sign out` : `Sign in`}
+        </Link>
       </li>
     </ul>
   );

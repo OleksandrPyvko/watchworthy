@@ -2,11 +2,17 @@
 
 * {
   box-sizing: border-box;
+  
+  
 }
 
 html {
   font-family: "Quicksand", sans-serif;
-  color: white;
+  color: rgb(230, 230, 230);
+  
+  scrollbar-gutter: stable;
+  scrollbar-width: none;
+
 }
 
 body {
@@ -14,4 +20,6 @@ body {
   background: radial-gradient(#282c34, #282c34);
 }
 
-
+main {
+  padding: 2rem 12rem;
+}

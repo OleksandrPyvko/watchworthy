@@ -1,0 +1,46 @@
+.input {
+  background-color: rgba(189, 189, 189, 0.226);
+  color: rgb(240, 240, 240);
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  padding: 0.5rem;
+}
+
+.input:focus {
+  outline: none;
+  border: 1px solid rgba(248, 190, 42, 0.8);
+  box-shadow: 0 0 2px rgba(248, 190, 42, 0.8);
+  transition: border-color 0.3s ease;
+}
+
+.input::placeholder {
+  color: rgb(206, 206, 206);
+}
+
+.genre-button:hover,
+.genre-button:active {
+  background: linear-gradient(90deg, #ff8a05, #f9b331);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* border: 1px solid #ff8a05; */
+}
+
+.active-filter {
+  background: linear-gradient(90deg, #ff8a05, #f9b331);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 1px solid #ff8a05;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+}
+
+.genre-button {
+  padding: 0.5rem 1rem;
+  background-color: rgba(126, 126, 126, 0.089);
+  color: rgba(255, 255, 255, 0.795);
+  border: 1px solid rgba(255, 255, 255, 0.466);
+  border-radius: 6px;
+  cursor: pointer;
+}

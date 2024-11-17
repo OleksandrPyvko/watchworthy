@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { getPopularMovies } from "@/lib/movies";
 import Image from "next/image";
 import classes from "./page.module.css";
@@ -33,8 +34,18 @@ async function page() {
           </p>
         </Link>
       ))}
+=======
+import SearchContainer from "@/components/movies/searchContainer";
+import classes from './page.module.css'
+function MoviesPage() {
+  return (
+    <div className={classes.search}>
+      {/* <Suspense fallback={<p className={classes.loading}>Loading movies...</p>}> */}
+      <SearchContainer />
+      {/* </Suspense> */}
+>>>>>>> b0e2fe8a7391d5182dea293b6614d61eb87e499b
     </div>
   );
 }
 
-export default page;
+export default MoviesPage;
