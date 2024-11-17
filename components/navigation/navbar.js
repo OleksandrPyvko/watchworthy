@@ -1,6 +1,11 @@
+
+
 import Link from "next/link";
 import classes from "./navbar.module.css";
-import { auth, signOut } from "@/app/auth";
+import { auth } from "@/app/auth";
+import AuthButton from "../buttons/authButton";
+import { Suspense } from "react";
+
 
 async function Navigation() {
   const session = await auth();
@@ -20,7 +25,7 @@ async function Navigation() {
       </li>
       <li>
         <div className={classes["user-container"]}>
-          {session ? (
+          {session?.user ? (
             <>
               <img
                 style={{
@@ -33,20 +38,16 @@ async function Navigation() {
                 referrerPolicy="no-referrer"
               />
               <span className={classes.user}>
-                {session.user ? `${session.user.name}` : ""}
+                {session?.user ? `${session?.user?.name}` : ""}
               </span>
             </>
           ) : (
-            ""
+            <></>
           )}
         </div>
       </li>
 
-      <li>
-        <Link href={`${session ? "/api/auth/signout" : "/api/auth/signin"}`}>
-          {session ? `Sign out` : `Sign in`}
-        </Link>
-      </li>
+      <AuthButton />
     </ul>
   );
 }

@@ -11,24 +11,22 @@ function Filter({
   searchInput,
   setSearchInput,
 }) {
-  const {
-    data: genres,
-    isLoading,
-    error,
-  } = useQuery({
+  const { data: genres } = useQuery({
     queryKey: ["genres"],
-    queryFn: async () => getGenres(),
+    queryFn: async () => await getGenres(),
   });
 
   function handleClick(value) {
+    if (selectedGenre === value) {
+      setSelectedGenre(null);
+      return;
+    }
     setSelectedGenre(value);
   }
 
   function handleChange(e) {
     setSearchInput(e.target.value);
   }
-
-  console.log("Filter selectedGenre:", selectedGenre);
 
   return (
     <div>
