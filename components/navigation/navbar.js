@@ -1,11 +1,8 @@
-
-
 import Link from "next/link";
 import classes from "./navbar.module.css";
 import { auth } from "@/app/auth";
 import AuthButton from "../buttons/authButton";
 import { Suspense } from "react";
-
 
 async function Navigation() {
   const session = await auth();
@@ -25,7 +22,7 @@ async function Navigation() {
       </li>
       <li>
         <div className={classes["user-container"]}>
-          {session?.user ? (
+          {session?.user && (
             <>
               <img
                 style={{
@@ -41,13 +38,12 @@ async function Navigation() {
                 {session?.user ? `${session?.user?.name}` : ""}
               </span>
             </>
-          ) : (
-            <></>
           )}
         </div>
       </li>
-
-      <AuthButton />
+      
+        <AuthButton />
+      
     </ul>
   );
 }
