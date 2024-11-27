@@ -5,8 +5,9 @@ import Image from "next/image";
 import classes from "./movie-details.module.css";
 import Rating from "../rating/rating-bar";
 import { useState } from "react";
+import AddToWatchLaterButton from "../buttons/addToWatchLaterButton";
 
-function MovieDetails({ data, trailerKey }) {
+function MovieDetails({ data, trailerKey, children }) {
   const [rating, setRating] = useState(0);
 
   const {
@@ -41,8 +42,9 @@ function MovieDetails({ data, trailerKey }) {
               src={`https://image.tmdb.org/t/p/w500${poster_path}`}
             />
           </div>
-          <p style={{color: 'white'}}>Your rating:</p>
-          <Rating rating={rating} setRating={setRating}/>
+          <div> {children} </div>
+          <p style={{ color: "white" }}>Your rating:</p>
+          <Rating rating={rating} setRating={setRating} />
         </div>
         <div
           style={{
