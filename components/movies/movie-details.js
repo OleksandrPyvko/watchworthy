@@ -1,14 +1,12 @@
-"use client";
-
 import { getMovieDetails, getTrailer } from "@/lib/movies";
 import Image from "next/image";
 import classes from "./movie-details.module.css";
 import Rating from "../rating/rating-bar";
-import { useState } from "react";
 import AddToWatchLaterButton from "../buttons/addToWatchLaterButton";
+import { auth } from "@/app/auth";
 
-function MovieDetails({ data, trailerKey, children }) {
-  const [rating, setRating] = useState(0);
+async function MovieDetails({ data, trailerKey, movieId, children }) {
+  const session = await auth();
 
   const {
     genres,
@@ -44,7 +42,7 @@ function MovieDetails({ data, trailerKey, children }) {
           </div>
           <div> {children} </div>
           <p style={{ color: "white" }}>Your rating:</p>
-          <Rating rating={rating} setRating={setRating} />
+          <Rating userEmail={session.user.email} movieId={movieId} />
         </div>
         <div
           style={{

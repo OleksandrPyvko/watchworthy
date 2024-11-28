@@ -13,12 +13,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Suspense fallback={<p>Loading</p>}>
-          <ReactQueryProvider>
+          {/* <ReactQueryProvider> */}
             <Header />
             <main>{children}</main>
-          </ReactQueryProvider>
-        </Suspense>
+          {/* </ReactQueryProvider> */}
       </body>
     </html>
   );

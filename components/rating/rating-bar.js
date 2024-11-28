@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 
-function Rating({ rating, setRating }) {
+function Rating(userEmail, movieId ) {
   const [hovered, setHovered] = useState(0);
-  // const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(0);
 
   function handleMouseEnter(index) {
     setHovered(index + 1);
@@ -16,7 +16,7 @@ function Rating({ rating, setRating }) {
 
   function handleClick(i) {
     setRating(i + 1);
-    handleMouseLeave(0); // Reset hovered state when rating is set manuall
+    
   }
 
   return (

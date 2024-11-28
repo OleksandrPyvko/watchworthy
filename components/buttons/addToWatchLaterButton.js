@@ -1,8 +1,9 @@
 import { addToWatchLaterAction } from "@/lib/actions";
 
-function AddToWatchLaterButton({ movieId, userEmail }) {
+function AddToWatchLaterButton({ movieId, userEmail, inList }) {
   return (
-    <form action={addToWatchLaterAction}>
+   <div>
+    {inList ? (<span> In list</span>) : ( <form action={addToWatchLaterAction}>
       <input hidden name="movieId" readOnly value={movieId} />
       <input hidden name="userEmail" readOnly value={userEmail} />
       <button>
@@ -10,7 +11,8 @@ function AddToWatchLaterButton({ movieId, userEmail }) {
         {movieId}
         {userEmail}
       </button>
-    </form>
+    </form>)}
+   </div>
   );
 }
 
