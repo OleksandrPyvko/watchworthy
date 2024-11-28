@@ -1,17 +1,18 @@
-import { addToWatchLaterAction } from "@/lib/actions";
 
-function AddToWatchLaterButton({ movieId, userEmail }) {
+function AddToWatchedButton({ movieId, userEmail, rating }) {
   return (
-    <form action={addToWatchLaterAction}>
+    <form >
       <input hidden name="movieId" readOnly value={movieId} />
       <input hidden name="userEmail" readOnly value={userEmail} />
+      <input hidden name="rating" readOnly value={rating} />
       <button>
-        Add to `Watch Later`
+        Add to `Watched`
         {movieId}
         {userEmail}
+        {rating}
       </button>
     </form>
   );
 }
 
-export default AddToWatchLaterButton;
+export default AddToWatchedButton;

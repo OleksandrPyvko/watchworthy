@@ -57,13 +57,13 @@ function MovieDetails({ data, trailerKey, children }) {
           <div className={classes["details-grid"]}>
             <span className={classes.highlight}>Rating: </span>
             <span>{vote_average}</span>
-            <span className={classes.highlight}>Release date: </span>{" "}
+            <span className={classes.highlight}>Release date: </span>
             <span>{release_date}</span>
-            <span className={classes.highlight}>Original title: </span>{" "}
-            <span>"{original_title}"</span>
-            <span className={classes.highlight}>Genres: </span>{" "}
+            <span className={classes.highlight}>Original title: </span>
+            <span>&quot;{original_title}&quot;</span>
+            <span className={classes.highlight}>Genres: </span>
             <span>{genresString}</span>
-            <span className={classes.highlight}>Runtime: </span>{" "}
+            <span className={classes.highlight}>Runtime: </span>
             <span>{runtime} min</span>
           </div>
           <h3 className={classes.highlight}>Overview: </h3>

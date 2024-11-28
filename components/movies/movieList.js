@@ -6,7 +6,7 @@ import classes from "./moviesList.module.css";
 import { getMovies } from "@/lib/movies";
 import { useQuery } from "@tanstack/react-query";
 
-function MovieList({ searchInput, selectedGenre }) {
+function MovieList({ searchInput, selectedGenre, initialData }) {
   const {
     data: movies,
     isLoading,
@@ -14,6 +14,7 @@ function MovieList({ searchInput, selectedGenre }) {
   } = useQuery({
     queryKey: ["movies", selectedGenre, searchInput],
     queryFn: () => getMovies(searchInput, selectedGenre),
+    initialData: initialData,
     keepPreviousData: true,
   });
 

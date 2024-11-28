@@ -41,9 +41,9 @@ async function Navigation() {
           )}
         </div>
       </li>
-      
+      <li>
         <AuthButton />
-      
+      </li>
     </ul>
   );
 }

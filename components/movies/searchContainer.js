@@ -4,7 +4,7 @@ import { useState } from "react";
 import MovieList from "./movieList";
 import Filter from "./filter";
 
-function SearchContainer() {
+function SearchContainer({initialData}) {
   const [selectedGenre, setSelectedGenre] = useState(null);
   const [searchInput, setSearchInput] = useState("");
 
@@ -16,7 +16,7 @@ function SearchContainer() {
         searchInput={searchInput}
         setSearchInput={setSearchInput}
       />
-      <MovieList selectedGenre={selectedGenre} searchInput={searchInput} />
+      <MovieList selectedGenre={selectedGenre} searchInput={searchInput} initialData={initialData}/>
     </>
   );
 }
