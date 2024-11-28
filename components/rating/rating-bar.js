@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-function Rating(userEmail, movieId ) {
+function Rating(userEmail, movieId) {
   const [hovered, setHovered] = useState(0);
   const [rating, setRating] = useState(0);
 
@@ -15,8 +15,8 @@ function Rating(userEmail, movieId ) {
   }
 
   function handleClick(i) {
+    //!!! handle rating updating in DB
     setRating(i + 1);
-    
   }
 
   return (
