@@ -20,6 +20,8 @@ function Rating(userEmail, movieId) {
 
   return (
     <div>
+      {rating === 0 ? <div>Rate this movie:</div> : <div>Your rating</div>}
+
       {[...Array(10)].map((_, i) => (
         <span
           key={i}

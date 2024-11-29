@@ -1,6 +1,6 @@
 import { addToWatchLaterAction } from "@/lib/actions";
 
-function AddToWatchLaterButton({ movieId, userEmail, inWatchLaterList }) {
+function AddToWatchLaterButton({ movieId, userEmail, inWatchLaterList, inWatchedList }) {
   return (
     <div>
       {inWatchLaterList ? (

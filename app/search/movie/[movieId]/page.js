@@ -59,19 +59,20 @@ async function Page({ params }) {
 
           {session ? (
             <>
-              <AddToWatchLaterButton
-                movieId={movieId}
-                userEmail={session?.user.email}
-                inWatchLaterList={inWatchLaterList}
-              />
+              {!inWatchedList && (
+                <AddToWatchLaterButton
+                  movieId={movieId}
+                  userEmail={session?.user.email}
+                  inWatchLaterList={inWatchLaterList}
+                  inWatchedList={inWatchedList}
+                />
+              )}
 
               <AddToWatchedButton
                 movieId={movieId}
                 userEmail={session?.user.email}
                 inWatchedList={inWatchedList}
               />
-              <p style={{ color: "white" }}>Your rating:</p>
-              <Rating userEmail={session.user.email} movieId={movieId} />
             </>
           ) : (
             ""
