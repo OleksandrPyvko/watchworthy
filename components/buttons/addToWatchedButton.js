@@ -1,17 +1,23 @@
+import Rating from "../rating/rating-bar";
 
-function AddToWatchedButton({ movieId, userEmail, rating }) {
+function AddToWatchedButton({ movieId, userEmail, inWatchedList }) {
+
   return (
-    <form >
-      <input hidden name="movieId" readOnly value={movieId} />
-      <input hidden name="userEmail" readOnly value={userEmail} />
-      <input hidden name="rating" readOnly value={rating} />
-      <button>
-        Add to `Watched`
-        {movieId}
-        {userEmail}
-        {rating}
-      </button>
-    </form>
+    <>
+      {inWatchedList ? (
+        <Rating movieId={movieId} userEmail={userEmail} />
+      ) : (
+        <form >
+          <input type="hidden" readOnly name="movieId" value={movieId} />
+          <input type="hidden" readOnly name="userEmail" value={userEmail} />
+          <button>
+            Add to `Watched`
+            {movieId}
+            {userEmail}
+          </button>
+        </form>
+      )}
+    </>
   );
 }
 

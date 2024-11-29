@@ -1,7 +1,5 @@
 import Header from "@/components/header/main-header";
 import "./globals.css";
-import ReactQueryProvider from "@/lib/reactQueryProvider";
-import { Suspense } from "react";
 
 export const metadata = {
   title: "Watchworthy",
@@ -13,10 +11,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-          {/* <ReactQueryProvider> */}
-            <Header />
-            <main>{children}</main>
-          {/* </ReactQueryProvider> */}
+        <Header />
+        {children}
       </body>
     </html>
   );

@@ -1,8 +1,6 @@
-import { getMovieDetails, getTrailer } from "@/lib/movies";
 import Image from "next/image";
 import classes from "./movie-details.module.css";
 import Rating from "../rating/rating-bar";
-import AddToWatchLaterButton from "../buttons/addToWatchLaterButton";
 import { auth } from "@/app/auth";
 
 async function MovieDetails({ data, trailerKey, movieId, children }) {
@@ -97,4 +95,4 @@ async function MovieDetails({ data, trailerKey, movieId, children }) {
 }
 
 export default MovieDetails;
-// genres, original_title, overview, poster_path, release_date, tagline, vote_average
+

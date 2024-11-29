@@ -15,7 +15,6 @@ function Rating(userEmail, movieId) {
   }
 
   function handleClick(i) {
-    //!!! handle rating updating in DB
     setRating(i + 1);
   }
 
