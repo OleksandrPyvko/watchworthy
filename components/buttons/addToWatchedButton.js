@@ -1,13 +1,13 @@
 import { addToWatchedAction } from "@/lib/actions";
 import Rating from "../rating/rating-bar";
 
-function AddToWatchedButton({ movieId, userEmail, inWatchedList }) {
+function AddToWatchedButton({ movieId, userEmail, inWatchedList, userRating }) {
 
   return (
     <>
-      {inWatchedList ? (
-        <Rating movieId={movieId} userEmail={userEmail} />
-      ) : (
+      {/* {inWatchedList ? (
+        <Rating movieId={movieId} userEmail={userEmail} userRating={userRating} />
+      ) : ( */}
         <form action={addToWatchedAction}>
           <input type="hidden" readOnly name="movieId" value={movieId} />
           <input type="hidden" readOnly name="userEmail" value={userEmail} />
@@ -17,7 +17,7 @@ function AddToWatchedButton({ movieId, userEmail, inWatchedList }) {
             {userEmail}
           </button>
         </form>
-      )}
+      {/* )} */}
     </>
   );
 }

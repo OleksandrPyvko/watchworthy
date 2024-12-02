@@ -1,21 +1,35 @@
 "use client";
 
+import { updateRating } from "@/lib/data-service";
 import { useState } from "react";
 
-function Rating(userEmail, movieId) {
+function Rating({ userEmail, movieId, userRating }) {
   const [hovered, setHovered] = useState(0);
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(userRating || 0);
+
+  // useEffect(() => {
+  //   async function ratingUpdating() {
+  //     const data = await getMovieDetails(movieId);
+  //     setRating(data.rating);
+  //   }
+  //   ratingUpdating();
+  // }, [movieId]);
+
+  console.log("user rating >>>>>", userRating);
 
   function handleMouseEnter(index) {
     setHovered(index + 1);
+    console.log(index + 1);
   }
 
   function handleMouseLeave() {
     setHovered(0);
   }
 
-  function handleClick(i) {
-    setRating(i + 1);
+  async function handleClick(i) {
+    const newRating = i + 1;
+    setRating(newRating);
+    await updateRating(newRating, userEmail, movieId);
   }
 
   return (

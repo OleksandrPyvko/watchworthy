@@ -2,7 +2,11 @@ import { getMovieDetails, getTrailer } from "@/lib/movies";
 import MovieDetails from "@/components/movies/movie-details";
 import AddToWatchLaterButton from "@/components/buttons/addToWatchLaterButton";
 import { auth } from "@/app/auth";
-import { getWatchedList, getWatchLaterList } from "@/lib/data-service";
+import {
+  getWatchedList,
+  getWatchedMovie,
+  getWatchLaterList,
+} from "@/lib/data-service";
 import AddToWatchedButton from "@/components/buttons/addToWatchedButton";
 import classes from "./page.module.css";
 import Image from "next/image";
@@ -12,17 +16,44 @@ async function Page({ params }) {
   const { movieId } = await params;
   const session = await auth();
 
-  const watchLaterList = await getWatchLaterList(session?.user.email);
+  const [
+    watchLaterList,
+    watchedList,
+    data,
+    trailerData,
+    watchedMovie,
+  ] = await Promise.all([
+    getWatchLaterList(session?.user.email),
+    getWatchedList(session?.user.email),
+    getMovieDetails(movieId),
+    getTrailer(movieId),
+    getWatchedMovie(session?.user.email, movieId),
+  ]);
+
   const watchLaterIds = watchLaterList?.map((movie) => movie.movieId);
-  const inWatchLaterList = watchLaterIds?.includes(Number(movieId));
-
-  const watchedList = await getWatchedList(session?.user.email);
   const watchedIds = watchedList?.map((movie) => movie.movieId);
+  const inWatchLaterList = watchLaterIds?.includes(Number(movieId));
   const inWatchedList = watchedIds?.includes(Number(movieId));
+  const userRating = watchedMovie?.[0]?.rating || 0;
 
-  const data = await getMovieDetails(movieId);
-  const trailerData = await getTrailer(movieId);
-  const trailerKey = trailerData !== undefined ? trailerData.key : null;
+  
+
+  // const watchLaterList = await getWatchLaterList(session?.user.email);
+  // const watchLaterIds = watchLaterList?.map((movie) => movie.movieId);
+  // const inWatchLaterList = watchLaterIds?.includes(Number(movieId));
+
+  // const watchedList = await getWatchedList(session?.user.email);
+  // const watchedIds = watchedList?.map((movie) => movie.movieId);
+  // const inWatchedList = watchedIds?.includes(Number(movieId));
+
+  // const data = await getMovieDetails(movieId);
+  // const trailerData = await getTrailer(movieId);
+  // const trailerKey = trailerData !== undefined ? trailerData.key : null;
+
+  // const watchedMovie = await getWatchedMovie(session?.user.email, movieId);
+  // const userRating = watchedMovie?.[0]?.rating || 0;
+
+  // console.log('>>',Number(userRating))
 
   const {
     genres,
@@ -38,6 +69,7 @@ async function Page({ params }) {
 
   const genresList = genres.map((genre) => genre.name);
   const genresString = genresList.join(", ");
+  const trailerKey = trailerData?.key || null;
 
   return (
     <div className={classes.details}>
@@ -68,11 +100,25 @@ async function Page({ params }) {
                 />
               )}
 
-              <AddToWatchedButton
+{inWatchedList ? (
+        <Rating movieId={movieId} userEmail={session?.user.email} userRating={userRating} />
+      ) : (
+        <AddToWatchedButton
                 movieId={movieId}
                 userEmail={session?.user.email}
                 inWatchedList={inWatchedList}
+                userRating={userRating}
               />
+        
+      )}
+
+
+              {/* <AddToWatchedButton
+                movieId={movieId}
+                userEmail={session?.user.email}
+                inWatchedList={inWatchedList}
+                userRating={userRating}
+              /> */}
             </>
           ) : (
             ""
