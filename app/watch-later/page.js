@@ -15,7 +15,7 @@ async function page() {
       <h1>Movies you are planning to watch</h1>
       <div className={classes["movie-list"]}>
         {moviesDetails.map((movie) => (
-          <>
+          
             <Link
               href={`/search/movie/${movie.id}`}
               className={classes.card}
@@ -46,7 +46,7 @@ async function page() {
                 <strong>Rating:</strong> {movie.vote_average}
               </p>
             </Link>
-          </>
+         
         ))}
       </div>
     </>

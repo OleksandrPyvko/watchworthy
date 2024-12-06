@@ -21,6 +21,7 @@ export default function Home() {
           Popular
         </Link>
       </div>
+     
     </div>
   );
 }

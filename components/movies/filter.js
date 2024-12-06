@@ -1,9 +1,6 @@
 "use client";
 
-import { useState } from "react";
 import classes from "./filter.module.css";
-import { getGenres } from "@/lib/movies";
-import { useQuery } from "@tanstack/react-query";
 
 function Filter({
   selectedGenre,
@@ -11,10 +8,6 @@ function Filter({
   searchInput,
   setSearchInput,
 }) {
-  // const { data: genres } = useQuery({
-  //   queryKey: ["genres"],
-  //   queryFn: async () => await getGenres(),
-  // });
   const genres = [
     { id: 28, name: "Action" },
     { id: 12, name: "Adventure" },
@@ -49,10 +42,8 @@ function Filter({
     setSearchInput(e.target.value);
   }
 
-  console.log(genres);
-
   return (
-    <div>
+    <div className={classes.container}>
       <input
         value={searchInput}
         onChange={handleChange}
@@ -61,13 +52,14 @@ function Filter({
         placeholder="Search by title"
       />
       <ul
-        style={{
-          display: "flex",
-          gap: "1rem",
-          flexWrap: "wrap",
-          listStyle: "none",
-          padding: "0",
-        }}
+        // style={{
+        //   display: "flex",
+        //   gap: "1rem",
+        //   flexWrap: "wrap",
+        //   listStyle: "none",
+        //   padding: "0",
+        // }}
+        className={classes['genres-list']}
       >
         {genres?.map((genre) => (
           <li key={genre.id}>
