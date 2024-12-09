@@ -3,6 +3,7 @@ import { auth } from "../auth";
 import Link from "next/link";
 import Image from "next/image";
 import classes from "./page.module.css";
+import { Loader } from "@/components/loader/loader";
 
 async function Page() {
   const session = await auth();
@@ -13,6 +14,7 @@ async function Page() {
   return (
     <>
       <h1>Watched movies</h1>
+
       <div className={classes["movie-list"]}>
         {moviesDetails.map((movie) => (
           <Link

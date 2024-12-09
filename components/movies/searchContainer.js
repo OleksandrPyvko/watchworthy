@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import MovieList from "./movieList";
 import Filter from "./filter";
-import classes from './searchContaine.module.css'
+import classes from "./searchContaine.module.css";
 
-function SearchContainer({initialData}) {
+function SearchContainer({ initialData }) {
   const [selectedGenre, setSelectedGenre] = useState(null);
   const [searchInput, setSearchInput] = useState("");
 
@@ -17,7 +17,12 @@ function SearchContainer({initialData}) {
         searchInput={searchInput}
         setSearchInput={setSearchInput}
       />
-      <MovieList selectedGenre={selectedGenre} searchInput={searchInput} initialData={initialData}/>
+
+      <MovieList
+        selectedGenre={selectedGenre}
+        searchInput={searchInput}
+        initialData={initialData}
+      />
     </div>
   );
 }

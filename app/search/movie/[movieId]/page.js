@@ -16,44 +16,20 @@ async function Page({ params }) {
   const { movieId } = await params;
   const session = await auth();
 
-  const [
-    watchLaterList,
-    watchedList,
-    data,
-    trailerData,
-    watchedMovie,
-  ] = await Promise.all([
-    getWatchLaterList(session?.user.email),
-    getWatchedList(session?.user.email),
-    getMovieDetails(movieId),
-    getTrailer(movieId),
-    getWatchedMovie(session?.user.email, movieId),
-  ]);
+  const [watchLaterList, watchedList, data, trailerData, watchedMovie] =
+    await Promise.all([
+      getWatchLaterList(session?.user.email),
+      getWatchedList(session?.user.email),
+      getMovieDetails(movieId),
+      getTrailer(movieId),
+      getWatchedMovie(session?.user.email, movieId),
+    ]);
 
   const watchLaterIds = watchLaterList?.map((movie) => movie.movieId);
   const watchedIds = watchedList?.map((movie) => movie.movieId);
   const inWatchLaterList = watchLaterIds?.includes(Number(movieId));
   const inWatchedList = watchedIds?.includes(Number(movieId));
   const userRating = watchedMovie?.[0]?.rating || 0;
-
-  
-
-  // const watchLaterList = await getWatchLaterList(session?.user.email);
-  // const watchLaterIds = watchLaterList?.map((movie) => movie.movieId);
-  // const inWatchLaterList = watchLaterIds?.includes(Number(movieId));
-
-  // const watchedList = await getWatchedList(session?.user.email);
-  // const watchedIds = watchedList?.map((movie) => movie.movieId);
-  // const inWatchedList = watchedIds?.includes(Number(movieId));
-
-  // const data = await getMovieDetails(movieId);
-  // const trailerData = await getTrailer(movieId);
-  // const trailerKey = trailerData !== undefined ? trailerData.key : null;
-
-  // const watchedMovie = await getWatchedMovie(session?.user.email, movieId);
-  // const userRating = watchedMovie?.[0]?.rating || 0;
-
-  // console.log('>>',Number(userRating))
 
   const {
     genres,
@@ -73,13 +49,9 @@ async function Page({ params }) {
 
   return (
     <div className={classes.details}>
-      <h2 className={classes.highlight}>{title}</h2>
+      {/* <h2 className={classes.highlight}>{title}</h2> */}
       <div className={classes["details-container"]}>
-        <div
-          style={{
-            textAlign: "center",
-          }}
-        >
+        <div>
           <div className={classes["image-wrapper"]}>
             <Image
               className={classes["movie-poster"]}
@@ -100,18 +72,20 @@ async function Page({ params }) {
                 />
               )}
 
-{inWatchedList ? (
-        <Rating movieId={movieId} userEmail={session?.user.email} userRating={userRating} />
-      ) : (
-        <AddToWatchedButton
-                movieId={movieId}
-                userEmail={session?.user.email}
-                inWatchedList={inWatchedList}
-                userRating={userRating}
-              />
-        
-      )}
-
+              {inWatchedList ? (
+                <Rating
+                  movieId={movieId}
+                  userEmail={session?.user.email}
+                  userRating={userRating}
+                />
+              ) : (
+                <AddToWatchedButton
+                  movieId={movieId}
+                  userEmail={session?.user.email}
+                  inWatchedList={inWatchedList}
+                  userRating={userRating}
+                />
+              )}
 
               {/* <AddToWatchedButton
                 movieId={movieId}
@@ -129,6 +103,9 @@ async function Page({ params }) {
             maxWidth: "100%",
           }}
         >
+          <h2 className={[classes.highlight, classes.title].join(" ")}>
+            {title}
+          </h2>
           <h3 className={[classes.tagline, classes.highlight].join(" ")}>
             {tagline}
           </h3>
@@ -174,18 +151,6 @@ async function Page({ params }) {
       </div>
     </div>
   );
-  // return (
-  //   <MovieDetails data={data} trailerKey={trailerKey} movieId={movieId}>
-  //     <AddToWatchLaterButton
-  //       movieId={movieId}
-  //       userEmail={session?.user.email}
-  //       inWatchLaterList={inWatchLaterList}
-  //     />
-
-  //     <AddToWatchedButton movieId={movieId} userEmail={session?.user.email} />
-  //   </MovieDetails>
-  // );
 }
 
 export default Page;
-// genres, original_title, overview, poster_path, release_date, tagline, vote_average

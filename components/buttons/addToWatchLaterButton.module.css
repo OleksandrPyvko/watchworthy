@@ -1,0 +1,11 @@
+.watch-later-button {
+  background: linear-gradient(
+    180deg,
+    rgb(52, 196, 95),
+    rgb(29, 109, 56)
+  );
+  padding: 4px 8px;
+  border: 1px solid;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+}

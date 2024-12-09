@@ -2,6 +2,7 @@ import ImageSlides from "@/components/image-slides/image-slides";
 import classes from "./page.module.css";
 import Link from "next/link";
 
+
 export default function Home() {
   return (
     <div className={classes["main-container"]}>
@@ -20,8 +21,8 @@ export default function Home() {
         <Link href="/search" className={classes.explore}>
           Popular
         </Link>
+        
       </div>
-     
     </div>
   );
 }

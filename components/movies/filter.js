@@ -51,16 +51,7 @@ function Filter({
         type="text"
         placeholder="Search by title"
       />
-      <ul
-        // style={{
-        //   display: "flex",
-        //   gap: "1rem",
-        //   flexWrap: "wrap",
-        //   listStyle: "none",
-        //   padding: "0",
-        // }}
-        className={classes['genres-list']}
-      >
+      <ul className={classes["genres-list"]}>
         {genres?.map((genre) => (
           <li key={genre.id}>
             <button
