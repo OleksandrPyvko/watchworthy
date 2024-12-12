@@ -5,7 +5,7 @@
 }
 
 .movie-list {
-  display: flex;
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 250px));
   gap: 20px;
   padding-top: 4rem;
@@ -36,20 +36,16 @@
 
   border: 1px solid transparent;
   border-radius: 5px;
-  
+
   color: white;
 }
-
-
-
-
 
 .buttons-container {
   display: flex;
   flex-direction: column;
-  gap:5px;
+  gap: 5px;
   position: absolute;
-  top:0;
+  top: 0;
   right: 15px;
   /* justify-content: space-between; */
 }
@@ -73,7 +69,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, rgb(30, 117, 216), rgb(23, 140, 236)); /* Gradient border */
+  background: linear-gradient(
+    45deg,
+    rgb(30, 117, 216),
+    rgb(23, 140, 236)
+  ); /* Gradient border */
   border-radius: inherit;
   z-index: -1; /* Place behind the button text */
   padding: 1px; /* Border thickness */
@@ -101,7 +101,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(450deg, rgb(112, 17, 17), rgb(216, 14, 14)); /* Gradient border */
+  background: linear-gradient(
+    450deg,
+    rgb(112, 17, 17),
+    rgb(216, 14, 14)
+  ); /* Gradient border */
   border-radius: inherit;
   z-index: -1; /* Place behind the button text */
   padding: 1px; /* Border thickness */
@@ -111,5 +115,5 @@
 }
 
 .delete-button:hover {
-  color: white
+  color: white;
 }

@@ -3,7 +3,6 @@ import { auth } from "../auth";
 import Link from "next/link";
 import Image from "next/image";
 import classes from "./page.module.css";
-import { Loader } from "@/components/loader/loader";
 
 async function Page() {
   const session = await auth();
@@ -11,43 +10,51 @@ async function Page() {
   const moviesIds = moviesList.map((movie) => movie.movieId);
   const moviesDetails = await getMoviesDetails(moviesIds);
 
+  const updatedList = moviesDetails.map((movie) => {
+    const x = moviesList.find((m) => m.movieId === movie.id);
+    return { ...movie, rating: x.rating };
+  });
+
   return (
     <>
       <h1>Watched movies</h1>
 
       <div className={classes["movie-list"]}>
-        {moviesDetails.map((movie) => (
-          <Link
-            href={`/search/movie/${movie.id}`}
-            className={classes.card}
-            key={movie.id}
-          >
-            <div className={classes["image-wrapper"]}>
-              <Image
-                fill
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                alt={movie.title}
-                className={classes["card-img"]}
-              />
-            </div>
-            {/* <div className={classes["buttons-container"]}>
-              <button
-              className={classes["watched-button"]}
+        {updatedList
+          .sort((a, b) => b.rating - a.rating)
+          .map((movie) => (
+            <Link
+              href={`/search/movie/${movie.id}`}
+              className={classes.card}
+              key={movie.id}
+            >
+              <div
+                className={`${classes.rating} ${
+                  movie.rating <= 4 ? classes["rating-low"] : ""
+                }
+                ${movie.rating <= 7 ? classes["rating-mid"] : ""}
+                `}
               >
-                Watched
-                </button>
-              <button className={classes['delete-button']}>Delete</button>
-              </div> */}
+                <span className={classes["rating-holder"]}>{movie.rating}</span>
+              </div>
+              <div className={classes["image-wrapper"]}>
+                <Image
+                  fill
+                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                  alt={movie.title}
+                  className={classes["card-img"]}
+                />
+              </div>
 
-            <h2>{movie.title}</h2>
-            <p>
-              <strong>Release Date:</strong> {movie.release_date}
-            </p>
-            <p>
-              <strong>Rating:</strong> {movie.vote_average}
-            </p>
-          </Link>
-        ))}
+              <h2 className={classes.title}>{movie.title}</h2>
+              <p>
+                <strong>Release Date:</strong> {movie.release_date}
+              </p>
+              <p>
+                <strong>Rating:</strong> {movie.vote_average}
+              </p>
+            </Link>
+          ))}
       </div>
     </>
   );
