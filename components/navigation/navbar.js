@@ -1,4 +1,3 @@
-import Link from "next/link";
 import classes from "./navbar.module.css";
 import { auth } from "@/app/auth";
 import AuthButton from "../buttons/authButton";

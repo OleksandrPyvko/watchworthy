@@ -24,7 +24,6 @@
 
 .highlight {
   background: linear-gradient(90deg, #00a2ff, #18f7ff);
-  /* background: linear-gradient(90deg, #c93e3e, #7c0505); */
   padding: 3rem 0 0 3rem;
   background-clip: text;
   -webkit-background-clip: text;

@@ -51,9 +51,9 @@ function Filter({
         type="text"
         placeholder="Search by title"
       />
-      <ul className={classes["genres-list"]}>
+      <ul className={classes["filter-container"]}>
         {genres?.map((genre) => (
-          <li key={genre.id}>
+          <li key={genre.id} className={classes['filter-button']}>
             <button
               onClick={() => handleClick(genre.id)}
               className={

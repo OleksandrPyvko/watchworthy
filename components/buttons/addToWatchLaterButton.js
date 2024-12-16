@@ -1,11 +1,6 @@
 import { addToWatchLaterAction } from "@/lib/actions";
-import classes from "./addToWatchLaterButton.module.css";
-function AddToWatchLaterButton({
-  movieId,
-  userEmail,
-  inWatchLaterList,
-  inWatchedList,
-}) {
+import classes from "./buttons.module.css";
+function AddToWatchLaterButton({ movieId, userEmail, inWatchLaterList }) {
   return (
     <div>
       {inWatchLaterList ? (
@@ -14,7 +9,9 @@ function AddToWatchLaterButton({
         <form action={addToWatchLaterAction}>
           <input hidden name="movieId" readOnly value={movieId} />
           <input hidden name="userEmail" readOnly value={userEmail} />
-          <button className={classes["watch-later-button"]}>
+          <button
+            className={`${classes.button} ${classes["button-watch-later"]}`}
+          >
             Add to &apos;Watch Later&apos;
           </button>
         </form>

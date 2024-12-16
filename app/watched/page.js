@@ -35,7 +35,7 @@ async function Page() {
                 ${movie.rating <= 7 ? classes["rating-mid"] : ""}
                 `}
               >
-                <span className={classes["rating-holder"]}>{movie.rating}</span>
+                <div className={classes["rating-holder"]}>{movie.rating}</div>
               </div>
               <div className={classes["image-wrapper"]}>
                 <Image

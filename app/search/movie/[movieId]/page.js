@@ -1,5 +1,4 @@
 import { getMovieDetails, getTrailer } from "@/lib/movies";
-import MovieDetails from "@/components/movies/movie-details";
 import AddToWatchLaterButton from "@/components/buttons/addToWatchLaterButton";
 import { auth } from "@/app/auth";
 import {
@@ -49,7 +48,6 @@ async function Page({ params }) {
 
   return (
     <div className={classes.details}>
-      {/* <h2 className={classes.highlight}>{title}</h2> */}
       <div className={classes["details-container"]}>
         <div>
           <div className={classes["image-wrapper"]}>
@@ -60,43 +58,37 @@ async function Page({ params }) {
               src={`https://image.tmdb.org/t/p/w500${poster_path}`}
             />
           </div>
+          <div className={classes["buttons-wrapper"]}>
+            {session ? (
+              <>
+                {!inWatchedList && (
+                  <AddToWatchLaterButton
+                    movieId={movieId}
+                    userEmail={session?.user.email}
+                    inWatchLaterList={inWatchLaterList}
+                    inWatchedList={inWatchedList}
+                  />
+                )}
 
-          {session ? (
-            <>
-              {!inWatchedList && (
-                <AddToWatchLaterButton
-                  movieId={movieId}
-                  userEmail={session?.user.email}
-                  inWatchLaterList={inWatchLaterList}
-                  inWatchedList={inWatchedList}
-                />
-              )}
-
-              {inWatchedList ? (
-                <Rating
-                  movieId={movieId}
-                  userEmail={session?.user.email}
-                  userRating={userRating}
-                />
-              ) : (
-                <AddToWatchedButton
-                  movieId={movieId}
-                  userEmail={session?.user.email}
-                  inWatchedList={inWatchedList}
-                  userRating={userRating}
-                />
-              )}
-
-              {/* <AddToWatchedButton
-                movieId={movieId}
-                userEmail={session?.user.email}
-                inWatchedList={inWatchedList}
-                userRating={userRating}
-              /> */}
-            </>
-          ) : (
-            ""
-          )}
+                {inWatchedList ? (
+                  <Rating
+                    movieId={movieId}
+                    userEmail={session?.user.email}
+                    userRating={userRating}
+                  />
+                ) : (
+                  <AddToWatchedButton
+                    movieId={movieId}
+                    userEmail={session?.user.email}
+                    inWatchedList={inWatchedList}
+                    userRating={userRating}
+                  />
+                )}
+              </>
+            ) : (
+              ""
+            )}
+          </div>
         </div>
         <div
           style={{
@@ -137,8 +129,6 @@ async function Page({ params }) {
           <p style={{ width: "250px" }}>No available trailers 8(</p>
         ) : (
           <iframe
-            // width="560"
-            // height="315"
             width="720"
             height="480"
             src={`https://www.youtube.com/embed/${trailerKey}`}

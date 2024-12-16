@@ -1,5 +1,3 @@
-
-
 import { signInAction, signOutAction } from "@/lib/actions";
 import classes from "./authButton.module.css";
 import { auth } from "@/app/auth";
@@ -11,7 +9,6 @@ async function AuthButton() {
     <>
       {session ? (
         <form
-          
           action={async () => {
             "use server";
             await signOutAction();
@@ -20,13 +17,13 @@ async function AuthButton() {
           <button className={classes.signin}>Sign Out</button>
         </form>
       ) : (
-        <form  action={signInAction}>
+        <form action={signInAction}>
           <button className={classes.signin}>
             <Image
               src="https://authjs.dev/img/providers/google.svg"
               height="20"
               width="20"
-              alt='Google'
+              alt="Google"
             />
             Sign in with Google
           </button>
@@ -37,6 +34,3 @@ async function AuthButton() {
 }
 
 export default AuthButton;
-
-
-

@@ -3,7 +3,7 @@
 import { Suspense, useState } from "react";
 import MovieList from "./movieList";
 import Filter from "./filter";
-import classes from "./searchContaine.module.css";
+import classes from "./searchContainer.module.css";
 
 function SearchContainer({ initialData }) {
   const [selectedGenre, setSelectedGenre] = useState(null);

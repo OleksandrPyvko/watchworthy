@@ -1,6 +1,6 @@
 "use client";
 
-import { } from "@/lib/data-service";
+import {} from "@/lib/data-service";
 
 function handleClick(movieId, userEmail) {
   addToWatchLater(movieId, userEmail);

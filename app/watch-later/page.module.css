@@ -47,17 +47,16 @@
   position: absolute;
   top: 0;
   right: 15px;
-  /* justify-content: space-between; */
 }
 
 .watched-button {
   position: relative;
   padding: 10px 20px;
   font-size: 16px;
-  color: rgb(60, 173, 248); /* Text color */
-  background: transparent; /* Transparent background */
-  border: none; /* Remove the default border */
-  border-radius: 8px; /* Optional: Rounded corners */
+  color: rgb(60, 173, 248);
+  background: transparent;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
   z-index: 0;
 }
@@ -73,10 +72,10 @@
     45deg,
     rgb(30, 117, 216),
     rgb(23, 140, 236)
-  ); /* Gradient border */
+  ); 
   border-radius: inherit;
-  z-index: -1; /* Place behind the button text */
-  padding: 1px; /* Border thickness */
+  z-index: -1;
+  padding: 1px;
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -86,10 +85,10 @@
   position: relative;
   padding: 10px 20px;
   font-size: 16px;
-  color: rgb(204, 42, 42); /* Text color */
-  background: transparent; /* Transparent background */
-  border: none; /* Remove the default border */
-  border-radius: 8px; /* Optional: Rounded corners */
+  color: rgb(204, 42, 42);
+  background: transparent;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
   z-index: 0;
 }
@@ -101,14 +100,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    450deg,
-    rgb(112, 17, 17),
-    rgb(216, 14, 14)
-  ); /* Gradient border */
+  background: linear-gradient(450deg, rgb(112, 17, 17), rgb(216, 14, 14));
   border-radius: inherit;
-  z-index: -1; /* Place behind the button text */
-  padding: 1px; /* Border thickness */
+  z-index: -1;
+  padding: 1px;
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;

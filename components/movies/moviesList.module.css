@@ -7,8 +7,10 @@
 .movie-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 250px));
-  gap: 20px;
-  padding-top: 4rem;
+  gap: 15px;
+  padding-top: 2rem;
+  margin: 0 auto;
+  place-content: center;
 }
 
 .card {
@@ -17,6 +19,7 @@
   text-decoration: none;
   color: white;
   border-radius: 15px;
+
 }
 
 .card:hover {

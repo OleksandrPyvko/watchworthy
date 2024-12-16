@@ -1,9 +1,6 @@
-
-
 .details {
   padding: 5rem 5rem;
   background-color: #1d2025b7;
-  /* border-radius: 30px; */
   font-family: "Montserrat", sans-serif;
   max-width: 95%;
   margin: auto;
@@ -56,11 +53,19 @@
   /* -webkit-background-clip: text; */
   /* -webkit-text-fill-color: transparent; */
   font-family: "Montserrat", sans-serif;
-
-  /* font-size: 4rem; */
 }
 
 .title {
   font-size: 50px;
   margin-bottom: 0px;
+}
+
+.buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.144);
+  padding: 1rem;
+  border-radius: 20px;
 }
