@@ -1,14 +1,10 @@
-"use client";
-
-import { getMovieDetails, getTrailer } from "@/lib/movies";
 import Image from "next/image";
 import classes from "./movie-details.module.css";
 import Rating from "../rating/rating-bar";
-import { useState } from "react";
-import AddToWatchLaterButton from "../buttons/addToWatchLaterButton";
+import { auth } from "@/app/auth";
 
-function MovieDetails({ data, trailerKey, children }) {
-  const [rating, setRating] = useState(0);
+async function MovieDetails({ data, trailerKey, movieId, children }) {
+  const session = await auth();
 
   const {
     genres,
@@ -44,7 +40,7 @@ function MovieDetails({ data, trailerKey, children }) {
           </div>
           <div> {children} </div>
           <p style={{ color: "white" }}>Your rating:</p>
-          <Rating rating={rating} setRating={setRating} />
+          <Rating userEmail={session.user.email} movieId={movieId} />
         </div>
         <div
           style={{
@@ -57,13 +53,13 @@ function MovieDetails({ data, trailerKey, children }) {
           <div className={classes["details-grid"]}>
             <span className={classes.highlight}>Rating: </span>
             <span>{vote_average}</span>
-            <span className={classes.highlight}>Release date: </span>{" "}
+            <span className={classes.highlight}>Release date: </span>
             <span>{release_date}</span>
-            <span className={classes.highlight}>Original title: </span>{" "}
-            <span>"{original_title}"</span>
-            <span className={classes.highlight}>Genres: </span>{" "}
+            <span className={classes.highlight}>Original title: </span>
+            <span>&quot;{original_title}&quot;</span>
+            <span className={classes.highlight}>Genres: </span>
             <span>{genresString}</span>
-            <span className={classes.highlight}>Runtime: </span>{" "}
+            <span className={classes.highlight}>Runtime: </span>
             <span>{runtime} min</span>
           </div>
           <h3 className={classes.highlight}>Overview: </h3>
@@ -99,4 +95,4 @@ function MovieDetails({ data, trailerKey, children }) {
 }
 
 export default MovieDetails;
-// genres, original_title, overview, poster_path, release_date, tagline, vote_average
+

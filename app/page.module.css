@@ -14,17 +14,18 @@
 }
 
 .main-container {
-  padding-top: 2rem;
   display: flex;
+  height: 100;
   max-width: 90%;
   justify-content: center;
+  align-items: center;
   margin: auto;
+  height: calc(100vh - 90px);
 }
 
 .highlight {
   background: linear-gradient(90deg, #00a2ff, #18f7ff);
-  /* background: linear-gradient(90deg, #c93e3e, #7c0505); */
-  padding: 3rem 0 0 3rem;
+  padding: 0 0 0 3rem;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -50,4 +51,10 @@
 
 .explore:hover {
   background: linear-gradient(90deg, #1d49a8, #043b8d);
+}
+
+.decription {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

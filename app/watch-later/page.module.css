@@ -1,31 +1,114 @@
 .image-wrapper {
-    position: relative;
-    height: 300px;
-    max-width: 200px;
-  }
-  
-  .movie-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 20px;
-    padding-top: 4rem;
-  }
-  
-  .card {
-    background-color: rgba(43, 42, 42, 0);
-    padding: 1rem;
-    text-decoration: none;
-    color: white;
-    border-radius: 15px;
-  }
-  
-  .card:hover {
-    background-color: rgb(60, 60, 60);
-  }
-  
-  .card-img {
-    object-fit: cover;
-    width: 100%;
-    border-radius: 10px;
-  }
-  
+  position: relative;
+  height: 300px;
+  max-width: 230px;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 250px));
+  gap: 20px;
+  padding-top: 4rem;
+}
+
+.card {
+  background-color: rgba(43, 42, 42, 0);
+  padding: 1rem;
+  text-decoration: none;
+  color: white;
+  border-radius: 15px;
+  max-width: 250px;
+  position: relative;
+}
+
+.card:hover {
+  background-color: rgb(60, 60, 60);
+}
+
+.card-img {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card-button {
+  padding: 6px 10px;
+
+  border: 1px solid transparent;
+  border-radius: 5px;
+
+  color: white;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+
+.watched-button {
+  position: relative;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: rgb(60, 173, 248);
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 0;
+}
+
+.watched-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgb(30, 117, 216),
+    rgb(23, 140, 236)
+  ); 
+  border-radius: inherit;
+  z-index: -1;
+  padding: 1px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.delete-button {
+  position: relative;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: rgb(204, 42, 42);
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 0;
+}
+
+.delete-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(450deg, rgb(112, 17, 17), rgb(216, 14, 14));
+  border-radius: inherit;
+  z-index: -1;
+  padding: 1px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.delete-button:hover {
+  color: white;
+}

@@ -9,11 +9,11 @@
   text-decoration: none;
 }
 
-/* .nav-link {
-} */
+
 
 .nav li {
   list-style: none;
+  
 }
 
 .nav li a {
@@ -48,8 +48,6 @@
   /* margin-left: -40px; */
   cursor: pointer;
 }
-
-
 
 .user {
   background: linear-gradient(90deg, #ff8a05, #f9b331);

@@ -1,26 +1,37 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import classes from "./moviesList.module.css";
 import { getMovies } from "@/lib/movies";
-import { useQuery } from "@tanstack/react-query";
+import { Loader } from "../loader/loader";
 
 function MovieList({ searchInput, selectedGenre }) {
-  const {
-    data: movies,
-    isLoading,
-    error,
-  } = useQuery({
-    queryKey: ["movies", selectedGenre, searchInput],
-    queryFn: () => getMovies(searchInput, selectedGenre),
-    keepPreviousData: true,
-  });
+  const [movies, setMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  if (isLoading) return <div>Loading movies...</div>;
-  if (error) return <div>Error fetching movies: {error.message}</div>;
+  useEffect(() => {
+    async function fetchMovies() {
+      setIsLoading(true);
+      setError(null);
 
-  console.log(searchInput, "search input");
+      try {
+        const fetchedMovies = await getMovies(searchInput, selectedGenre);
+        setMovies(fetchedMovies);
+      } catch (err) {
+        setError(err.message || "An error occurred while fetching movies.");
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    fetchMovies();
+  }, [searchInput, selectedGenre]);
+
+  if (isLoading) return <Loader />;
+  if (error) return <div>Error fetching movies: {error}</div>;
 
   return (
     <div className={classes["movie-list"]}>
@@ -29,7 +40,6 @@ function MovieList({ searchInput, selectedGenre }) {
           href={`/search/movie/${movie.id}`}
           className={classes.card}
           key={movie.id}
-          // style={{ border: "1px solid #ccc", padding: "1rem" }}
         >
           <div className={classes["image-wrapper"]}>
             <Image
@@ -53,3 +63,4 @@ function MovieList({ searchInput, selectedGenre }) {
 }
 
 export default MovieList;
+

@@ -2,13 +2,14 @@ import ImageSlides from "@/components/image-slides/image-slides";
 import classes from "./page.module.css";
 import Link from "next/link";
 
+
 export default function Home() {
   return (
     <div className={classes["main-container"]}>
       <div className={classes.slideshow}>
         <ImageSlides />
       </div>
-      <div>
+      <div className={classes.description}>
         <h1 className={classes.highlight}> Watchworthy</h1>
         <p className={classes.article}>
           is your go-to place to explore movies, create personal watchlists, and
@@ -20,6 +21,7 @@ export default function Home() {
         <Link href="/search" className={classes.explore}>
           Popular
         </Link>
+        
       </div>
     </div>
   );

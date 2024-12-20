@@ -1,6 +1,5 @@
 import Header from "@/components/header/main-header";
 import "./globals.css";
-import ReactQueryProvider from "@/lib/reactQueryProvider";
 
 export const metadata = {
   title: "Watchworthy",
@@ -11,11 +10,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={``}>
-        <ReactQueryProvider>
-          <Header />
-          <main>{children}</main>
-        </ReactQueryProvider>
+      <body>
+        <Header />
+        <main>
+          {children}
+          </main>
       </body>
     </html>
   );

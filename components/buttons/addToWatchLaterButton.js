@@ -1,18 +1,22 @@
-"use client";
-
-import { addToWatchLater } from "@/lib/data-service";
-
-function handleClick(movieId, userEmail) {
-  addToWatchLater(movieId, userEmail);
-}
-
-function AddToWatchLaterButton({ movieId, userEmail }) {
+import { addToWatchLaterAction } from "@/lib/actions";
+import classes from "./buttons.module.css";
+function AddToWatchLaterButton({ movieId, userEmail, inWatchLaterList }) {
   return (
-    <button onClick={() => handleClick(movieId, userEmail)}>
-      Add to `Watch Later`
-      {movieId}
-      {userEmail}
-    </button>
+    <div>
+      {inWatchLaterList ? (
+        <span> Already in your &apos;Watch Later&apos; list</span>
+      ) : (
+        <form action={addToWatchLaterAction}>
+          <input hidden name="movieId" readOnly value={movieId} />
+          <input hidden name="userEmail" readOnly value={userEmail} />
+          <button
+            className={`${classes.button} ${classes["button-watch-later"]}`}
+          >
+            Add to &apos;Watch Later&apos;
+          </button>
+        </form>
+      )}
+    </div>
   );
 }
 

@@ -1,26 +1,32 @@
 "use client";
 
+import { updateRating } from "@/lib/data-service";
 import { useState } from "react";
+import classes from "./rating-bar.module.css";
 
-function Rating({ rating, setRating }) {
+function Rating({ userEmail, movieId, userRating }) {
   const [hovered, setHovered] = useState(0);
-  // const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(userRating || 0);
 
   function handleMouseEnter(index) {
     setHovered(index + 1);
+    console.log(index + 1);
   }
 
   function handleMouseLeave() {
     setHovered(0);
   }
 
-  function handleClick(i) {
-    setRating(i + 1);
-    handleMouseLeave(0); // Reset hovered state when rating is set manuall
+  async function handleClick(i) {
+    const newRating = i + 1;
+    setRating(newRating);
+    await updateRating(newRating, userEmail, movieId);
   }
 
   return (
-    <div>
+    <div className={classes["rating-bar"]}>
+      {rating === 0 ? <div>Rate this movie:</div> : <div>Your rating</div>}
+
       {[...Array(10)].map((_, i) => (
         <span
           key={i}
@@ -30,7 +36,7 @@ function Rating({ rating, setRating }) {
           style={{ cursor: "pointer" }}
         >
           <svg
-            // viewBox="0 0 24 24"
+            viewBox="0 0 24 24"
             width="25px"
             height="30px"
             fill={i < hovered || i < rating ? "#FFD700" : "none"}
