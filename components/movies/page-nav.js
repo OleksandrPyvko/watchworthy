@@ -21,9 +21,9 @@ const PageNav = ({ page, setPage }) => {
           height="24"
           fill="none"
           stroke="black"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
           <path d="M15 18l-6-6 6-6" />
         </svg>
@@ -37,9 +37,9 @@ const PageNav = ({ page, setPage }) => {
           height="24"
           fill="none"
           stroke="black"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
           <path d="M9 18l6-6-6-6" />
         </svg>

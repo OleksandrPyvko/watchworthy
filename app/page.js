@@ -9,7 +9,7 @@ export default function Home() {
       <div className={classes.slideshow}>
         <ImageSlides />
       </div>
-      <div>
+      <div className={classes.description}>
         <h1 className={classes.highlight}> Watchworthy</h1>
         <p className={classes.article}>
           is your go-to place to explore movies, create personal watchlists, and

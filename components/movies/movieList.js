@@ -30,7 +30,7 @@ function MovieList({ searchInput, selectedGenre, page }) {
     fetchMovies();
   }, [searchInput, selectedGenre, page]);
 
-  if (isLoading) return <Loader />;
+  if (isLoading) return <div className={classes.loader}><Loader /></div>
   if (error) return <div>Error fetching movies: {error}</div>;
 
   return (

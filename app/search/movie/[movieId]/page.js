@@ -58,7 +58,8 @@ async function Page({ params }) {
               src={`https://image.tmdb.org/t/p/w500${poster_path}`}
             />
           </div>
-          <div className={classes["buttons-wrapper"]}>
+          {/* <div className={classes["buttons-wrapper"]}> */}
+          <div className={`${session ? classes["button-wrapper"] : ""}`}>
             {session ? (
               <>
                 {!inWatchedList && (

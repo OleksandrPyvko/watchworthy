@@ -19,7 +19,6 @@
   text-decoration: none;
   color: white;
   border-radius: 15px;
-
 }
 
 .card:hover {
@@ -30,4 +29,11 @@
   object-fit: cover;
   width: 100%;
   border-radius: 10px;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
