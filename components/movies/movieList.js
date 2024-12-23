@@ -7,7 +7,7 @@ import classes from "./moviesList.module.css";
 import { getMovies } from "@/lib/movies";
 import { Loader } from "../loader/loader";
 
-function MovieList({ searchInput, selectedGenre }) {
+function MovieList({ searchInput, selectedGenre, page }) {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -18,7 +18,7 @@ function MovieList({ searchInput, selectedGenre }) {
       setError(null);
 
       try {
-        const fetchedMovies = await getMovies(searchInput, selectedGenre);
+        const fetchedMovies = await getMovies(searchInput, selectedGenre, page);
         setMovies(fetchedMovies);
       } catch (err) {
         setError(err.message || "An error occurred while fetching movies.");
@@ -28,7 +28,7 @@ function MovieList({ searchInput, selectedGenre }) {
     }
 
     fetchMovies();
-  }, [searchInput, selectedGenre]);
+  }, [searchInput, selectedGenre, page]);
 
   if (isLoading) return <Loader />;
   if (error) return <div>Error fetching movies: {error}</div>;
@@ -63,4 +63,3 @@ function MovieList({ searchInput, selectedGenre }) {
 }
 
 export default MovieList;
-

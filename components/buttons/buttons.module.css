@@ -20,10 +20,11 @@
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  border: 1px solid #ffffff67;
 }
 
 .button-watch-later {
-  background-color: #28a745; /* Green */
+  background-color: #28a74600; /* Green */
   color: #fff;
 }
 
@@ -32,7 +33,7 @@
 }
 
 .button-watched {
-  background-color: #007bff;
+  background-color: #007bff00;
   color: #fff;
 }
 

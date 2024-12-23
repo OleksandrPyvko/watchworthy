@@ -7,6 +7,7 @@ function Filter({
   setSelectedGenre,
   searchInput,
   setSearchInput,
+  setPage,
 }) {
   const genres = [
     { id: 28, name: "Action" },
@@ -33,9 +34,11 @@ function Filter({
   function handleClick(value) {
     if (selectedGenre === value) {
       setSelectedGenre(null);
+      setPage(1);
       return;
     }
     setSelectedGenre(value);
+    setPage(1);
   }
 
   function handleChange(e) {
@@ -53,7 +56,7 @@ function Filter({
       />
       <ul className={classes["filter-container"]}>
         {genres?.map((genre) => (
-          <li key={genre.id} className={classes['filter-button']}>
+          <li key={genre.id} className={classes["filter-button"]}>
             <button
               onClick={() => handleClick(genre.id)}
               className={
