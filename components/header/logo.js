@@ -8,9 +8,16 @@ function Logo() {
     <div>
       <Link href="/" className={classes.logo}>
         <div className={classes.imageContainer}>
-          <Image src={logo} fill alt="logo" />
+          <Image
+            src={logo}
+            width={80}
+            height={80}
+            alt="logo"
+            styles={{ width: "80px", height: "80px" }}
+            className={classes.image}
+          />
         </div>
-        <span>Watchworthy</span>
+        <p className={classes.title}>Watchworthy</p>
       </Link>
     </div>
   );

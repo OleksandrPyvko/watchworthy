@@ -35,17 +35,20 @@ function ImageSlides() {
   }, []);
 
   return (
-    <div className={classes.slideshow}>
-      {images.map((image, index) => (
-        <Image
-          key={index}
-          src={image.image}
-          className={index === currentImageIndex ? classes.active : ""}
-          alt={image.alt}
-          fill
-        />
-      ))}
-    </div>
+    // <div className={classes.wrapper}>
+      <div className={classes.slideshow}>
+        {images.map((image, index) => (
+          <Image
+            key={index}
+            src={image.image}
+            className={index === currentImageIndex ? classes.active : ""}
+            alt={image.alt}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        ))}
+      </div>
+    // </div>
   );
 }
 

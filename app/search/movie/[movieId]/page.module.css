@@ -12,7 +12,7 @@
   height: 500px;
   width: 350px;
   border: 1px solid transparent;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   overflow: hidden;
 }
 
@@ -49,9 +49,6 @@
 
 .highlight {
   color: rgba(255, 255, 255, 0.801);
-  /* background-clip: text; */
-  /* -webkit-background-clip: text; */
-  /* -webkit-text-fill-color: transparent; */
   font-family: "Montserrat", sans-serif;
 }
 
@@ -67,5 +64,5 @@
   align-items: center;
   background-color: rgba(0, 0, 0, 0.144);
   padding: 1rem;
-  border-radius: 20px;
+  /* border-radius: 20px; */
 }

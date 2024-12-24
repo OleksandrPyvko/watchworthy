@@ -56,12 +56,12 @@ async function Page({ params }) {
               fill
               alt="Movie poster"
               src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
-          {/* <div className={classes["buttons-wrapper"]}> */}
           <div className={`${session ? classes["button-wrapper"] : ""}`}>
             {session ? (
-              <>
+              <div className={classes["buttons-wrapper"]}>
                 {!inWatchedList && (
                   <AddToWatchLaterButton
                     movieId={movieId}
@@ -85,7 +85,7 @@ async function Page({ params }) {
                     userRating={userRating}
                   />
                 )}
-              </>
+              </div>
             ) : (
               ""
             )}

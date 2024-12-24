@@ -19,3 +19,9 @@ body {
 main {
   padding: 0 12rem;
 }
+
+@media (max-width: 1400px) {
+  main {
+    padding: 0 8rem;
+  }
+}

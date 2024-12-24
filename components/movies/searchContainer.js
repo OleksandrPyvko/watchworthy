@@ -10,6 +10,7 @@ function SearchContainer({ initialData }) {
   const [selectedGenre, setSelectedGenre] = useState(null);
   const [searchInput, setSearchInput] = useState("");
   const [page, setPage] = useState(1);
+  const [lastPage, setLastPage] = useState(false);
 
   return (
     <div className={classes.container}>
@@ -20,14 +21,16 @@ function SearchContainer({ initialData }) {
         setSearchInput={setSearchInput}
         setPage={setPage}
       />
-
-      <MovieList
-        selectedGenre={selectedGenre}
-        searchInput={searchInput}
-        initialData={initialData}
-        page={page}
-      />
-      <PageNav page={page} setPage={setPage} />
+      
+        <MovieList
+          selectedGenre={selectedGenre}
+          searchInput={searchInput}
+          initialData={initialData}
+          page={page}
+          setLastPage={setLastPage}
+        />
+      
+      <PageNav page={page} setPage={setPage} lastPage={lastPage}/>
     </div>
   );
 }

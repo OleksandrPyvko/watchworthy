@@ -33,3 +33,9 @@
 .button-shadow {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+.added {
+  color: #ffa218;
+  margin: 0;
+  padding-bottom: 5px;
+}

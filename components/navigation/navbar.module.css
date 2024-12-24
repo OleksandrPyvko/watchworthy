@@ -9,11 +9,8 @@
   text-decoration: none;
 }
 
-
-
 .nav li {
   list-style: none;
-  
 }
 
 .nav li a {
@@ -62,4 +59,24 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+}
+
+@media (max-width: 1400px) {
+  .nav {
+    font-size: 1rem;
+    gap: 1rem;
+  }
+
+  .user-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 14px;
+  }
+
+  .user-image {
+    width: 25px;
+    height: 25px;
+  }
 }

@@ -1,14 +1,18 @@
+"use client";
+
 import classes from "./page-nav.module.css";
 
-const PageNav = ({ page, setPage }) => {
+const PageNav = ({ page, setPage, lastPage }) => {
   const handlePrevClick = () => {
     if (page > 1) {
       setPage(page - 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
   const handleNextClick = () => {
     setPage(page + 1);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -29,7 +33,7 @@ const PageNav = ({ page, setPage }) => {
         </svg>
       </button>
       <span>Page {page}</span>
-      <button onClick={handleNextClick}>
+      <button onClick={handleNextClick} disabled={lastPage}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"

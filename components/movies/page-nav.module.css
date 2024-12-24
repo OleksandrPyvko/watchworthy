@@ -2,15 +2,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    max-width: 300px;
-    margin: auto;
+    padding: 20px 20px;
+    max-width: 350px;
+    margin: 40px auto;
     height: 80px;
-    padding-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.185);
+    border-radius: 13px;
+    
 }
 
 .page-nav button {
-    padding: 10px 20px;
+    padding: 5px 20px;
     border: none;
     border-radius: 5px;
     font-size: 14px;

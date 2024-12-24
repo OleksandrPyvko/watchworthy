@@ -11,3 +11,10 @@
 .signin:hover {
   color: black;
 }
+
+@media (max-width: 1400px) {
+  .signin {
+    padding: 3px;
+    font-size: 11px;
+  }
+}

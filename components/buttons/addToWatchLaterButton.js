@@ -4,7 +4,7 @@ function AddToWatchLaterButton({ movieId, userEmail, inWatchLaterList }) {
   return (
     <div>
       {inWatchLaterList ? (
-        <span> Already in your &apos;Watch Later&apos; list</span>
+        <p className={classes.added}> In your &apos;Watch Later&apos; list</p>
       ) : (
         <form action={addToWatchLaterAction}>
           <input hidden name="movieId" readOnly value={movieId} />
