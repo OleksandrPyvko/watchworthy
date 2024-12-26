@@ -11,15 +11,17 @@ function Humburger() {
   }
 
   return (
-    <button
-      className={`${classes.hamburger} ${isOpen ? classes.open : ""}`}
-      onClick={toggleMenu}
-      aria-label="Toggle navigation menu"
-    >
-      <span className={classes.line}></span>
-      <span className={classes.line}></span>
-      <span className={classes.line}></span>
-    </button>
+    <div className={classes.container}>
+      <button
+        className={`${classes.hamburger} ${isOpen ? classes.open : ""}`}
+        onClick={toggleMenu}
+        aria-label="Toggle navigation menu"
+      >
+        <span className={classes.line}></span>
+        <span className={classes.line}></span>
+        <span className={classes.line}></span>
+      </button>
+    </div>
   );
 }
 

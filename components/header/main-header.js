@@ -9,8 +9,8 @@ function Header() {
     <div className={classes.header}>
       <MainHeaderBg />
       <Logo />
-      <Navigation />
       <Humburger />
+      <Navigation />
     </div>
   );
 }

@@ -1,7 +1,6 @@
 .slideshow {
   max-width: 400px;
   max-height: 600px;
-  width: 100%;
   height: 100%;
 }
 
@@ -18,7 +17,7 @@
 .main-container {
   display: flex;
   height: 100vh;
-  max-width: 90%;
+  /* max-width: 90%; */
   justify-content: center;
   align-items: center;
   margin: auto;
@@ -62,4 +61,53 @@
   display: flex;
   flex-direction: column;
   gap: 0;
+}
+
+@media (max-width: 1400px) {
+  .highlight {
+    font-size: 3rem;
+  }
+  .description {
+    margin-left: 1rem;
+    max-width: 25rem;
+  }
+
+  .article {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    justify-items: center;
+  }
+
+  .highlight {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .description {
+    margin-left: 0;
+    max-width: 500px;
+  }
+
+  .article {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .slideshow {
+    max-width: 100%;
+    max-height: 70%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+  .explore {
+    margin: 0 auto;
+  }
 }

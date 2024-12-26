@@ -2,6 +2,8 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -9,6 +11,8 @@ html {
   color: rgb(230, 230, 230);
   scrollbar-gutter: stable;
   scrollbar-width: none;
+  height: 100%;
+  width: 100%;
 }
 
 body {
@@ -18,10 +22,18 @@ body {
 
 main {
   padding: 0 12rem;
+  height: 100%;
 }
 
 @media (max-width: 1400px) {
   main {
     padding: 0 8rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  main {
+    padding: 0 4rem;
+    height: calc(100vh - 90px);
   }
 }

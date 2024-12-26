@@ -1,3 +1,9 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -30,7 +36,7 @@
   transform: translateY(-10px) rotate(-45deg);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .hamburger {
     display: none;
   }
