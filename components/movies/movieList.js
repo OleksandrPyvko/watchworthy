@@ -46,7 +46,7 @@ function MovieList({ searchInput, selectedGenre, page, setLastPage }) {
   return (
     <>
       {!selectedGenre && !searchInput && (
-        <h2 style={{ padding: 0, margin: 0 }}>New and popular</h2>
+        <h2 className={classes.heading}>New and popular</h2>
       )}
       <div className={classes["movie-list"]}>
         {movies?.map((movie) => (

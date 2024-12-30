@@ -3,13 +3,16 @@ import classes from "./main-header.module.css";
 import Logo from "./logo";
 import Navigation from "../navigation/navbar";
 import Humburger from "../humburger/humburger";
+import { auth } from "@/app/auth";
 
-function Header() {
+async function Header() {
+  const session = await auth();
+
   return (
     <div className={classes.header}>
       <MainHeaderBg />
       <Logo />
-      <Humburger />
+      <Humburger session={session} />
       <Navigation />
     </div>
   );

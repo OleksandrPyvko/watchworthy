@@ -1,3 +1,5 @@
+"use server";
+
 import { signInAction, signOutAction } from "@/lib/actions";
 import classes from "./authButton.module.css";
 import { auth } from "@/app/auth";
@@ -8,12 +10,7 @@ async function AuthButton() {
   return (
     <>
       {session ? (
-        <form
-          action={async () => {
-            "use server";
-            await signOutAction();
-          }}
-        >
+        <form action={signOutAction}>
           <button className={classes.signin}>Sign Out</button>
         </form>
       ) : (

@@ -2,8 +2,12 @@
 
 import { useState } from "react";
 import classes from "./humburger.module.css";
+import Image from "next/image";
+import NavLink from "../navigation/NavLink";
+import AuthButton from "../buttons/authButton";
+import { auth } from "@/app/auth";
 
-function Humburger() {
+function Humburger({ session }) {
   const [isOpen, setIsOpen] = useState(false);
 
   function toggleMenu() {
