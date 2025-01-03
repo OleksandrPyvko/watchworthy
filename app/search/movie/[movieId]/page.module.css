@@ -37,8 +37,13 @@
 .details-container {
   display: flex;
   gap: 4rem;
-  width: 80%;
+  /* width: 100%; */
+  width: fit-content;
   margin: auto;
+}
+
+.info {
+  max-width: 600px !important;
 }
 
 .trailer {
@@ -65,4 +70,29 @@
   background-color: rgba(0, 0, 0, 0.144);
   padding: 1rem;
   /* border-radius: 20px; */
+}
+
+@media (max-width: 1400px) {
+  .details-container {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .details {
+    padding: 2rem 2rem;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .details-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .buttons-wrapper {
+    flex-direction: row;
+  }
 }

@@ -2,7 +2,7 @@ import MainHeaderBg from "./main-header-bg";
 import classes from "./main-header.module.css";
 import Logo from "./logo";
 import Navigation from "../navigation/navbar";
-import Humburger from "../humburger/humburger";
+import Hamburger from "../hamburger/hamburger";
 import { auth } from "@/app/auth";
 
 async function Header() {
@@ -12,7 +12,7 @@ async function Header() {
     <div className={classes.header}>
       <MainHeaderBg />
       <Logo />
-      <Humburger session={session} />
+      <Hamburger session={session} />
       <Navigation />
     </div>
   );

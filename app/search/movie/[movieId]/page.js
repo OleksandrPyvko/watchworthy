@@ -92,6 +92,7 @@ async function Page({ params }) {
           </div>
         </div>
         <div
+          className={classes.info}
           style={{
             maxWidth: "100%",
           }}

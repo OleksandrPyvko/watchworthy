@@ -37,3 +37,9 @@ main {
     height: calc(100vh - 90px);
   }
 }
+
+@media (max-width: 768px) {
+  main {
+    padding: 0 2rem;
+  }
+}

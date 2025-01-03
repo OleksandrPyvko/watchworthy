@@ -8,13 +8,11 @@ function MainHeaderBg() {
           <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop
               offset="0%"
-              style={{ stopColor: "#326fa8", stopOpacity: "1" }}
-              // style={{ stopColor: "#520303", stopOpacity: "1" }}
+              style={{ stopColor: "#2f63b0", stopOpacity: "1" }}
             />
             <stop
               offset="100%"
-              // style={{ stopColor: "#3289a8", stopOpacity: "1" }}
-              // style={{ stopColor: "#9e3131", stopOpacity: "1" }}
+              style={{ stopColor: "#25539a", stopOpacity: "1" }}
             />
           </linearGradient>
         </defs>
