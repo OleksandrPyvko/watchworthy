@@ -64,11 +64,11 @@ function MovieList({ searchInput, selectedGenre, page, setLastPage }) {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
-            <h2>{movie.title}</h2>
-            <p>
+            <h2 className={classes.title}>{movie.title}</h2>
+            <p className={classes.info}>
               <strong>Release Date:</strong> {movie.release_date}
             </p>
-            <p>
+            <p className={classes.info}>
               <strong>Rating:</strong> {movie.vote_average}
             </p>
           </Link>

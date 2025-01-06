@@ -2,6 +2,9 @@
   justify-content: center;
   align-items: center;
   display: none;
+  position: absolute;
+  right: 7%;
+  top: 2%;
 }
 
 .hamburger {
