@@ -1,0 +1,11 @@
+- Feature to change account
+- Sign in with credentials
+- user's collections responsiveness
+- to be able to delete movie from collection (watched or planned to watch)
+- sorting for rated movies (maybe for searched too)
+- better styling ???
+-
+
+
+- deploy
+- change NEXTAUTH_URL
