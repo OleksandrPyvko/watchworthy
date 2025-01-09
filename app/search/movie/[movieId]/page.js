@@ -57,6 +57,7 @@ async function Page({ params }) {
               alt="Movie poster"
               src={`https://image.tmdb.org/t/p/w500${poster_path}`}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority={false}
             />
           </div>
           <div className={`${session ? classes["button-wrapper"] : ""}`}>
@@ -130,15 +131,15 @@ async function Page({ params }) {
         {trailerKey === null ? (
           <p style={{ width: "250px" }}>No available trailers 8(</p>
         ) : (
-          <iframe
-            width="720"
-            height="480"
-            src={`https://www.youtube.com/embed/${trailerKey}`}
-            title={`Trailer`}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+          <div className={classes.trailer}>
+            <iframe
+              src={`https://www.youtube.com/embed/${trailerKey}`}
+              title={`Trailer`}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
         )}
       </div>
     </div>

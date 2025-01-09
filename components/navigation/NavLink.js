@@ -7,8 +7,6 @@ import classes from "./navLink.module.css";
 function NavLink({ href, children }) {
   const path = usePathname();
 
-  console.log(path);
-
   return (
     <Link className={path === href ? `${classes.active}` : ""} href={href}>
       {children}

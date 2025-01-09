@@ -1,12 +1,9 @@
 import classes from "./navbar.module.css";
-import { auth } from "@/app/auth";
 import AuthButton from "../buttons/authButton";
 import NavLink from "./NavLink";
 import Image from "next/image";
 
-async function Navigation() {
-  const session = await auth();
-
+function Navigation({ session }) {
   return (
     <>
       <ul className={classes.nav}>

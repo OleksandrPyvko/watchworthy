@@ -2,10 +2,6 @@
 
 import { useState } from "react";
 import classes from "./hamburger.module.css";
-import Image from "next/image";
-import NavLink from "../navigation/NavLink";
-import AuthButton from "../buttons/authButton";
-import { auth } from "@/app/auth";
 import HamburgerMenu from "./hamburgerMenu";
 
 function Hamburger({ session }) {
@@ -17,19 +13,19 @@ function Hamburger({ session }) {
 
   return (
     <>
-    <div className={classes.container}>
-      <button
-        className={`${classes.hamburger} ${isOpen ? classes.open : ""}`}
-        onClick={toggleMenu}
-        aria-label="Toggle navigation menu"
+      <div className={classes.container}>
+        <button
+          className={`${classes.hamburger} ${isOpen ? classes.open : ""}`}
+          onClick={toggleMenu}
+          aria-label="Toggle navigation menu"
         >
-        <span className={classes.line}></span>
-        <span className={classes.line}></span>
-        <span className={classes.line}></span>
-      </button>
-    </div>
-    <HamburgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
-        </>
+          <span className={classes.line}></span>
+          <span className={classes.line}></span>
+          <span className={classes.line}></span>
+        </button>
+      </div>
+      <HamburgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+    </>
   );
 }
 

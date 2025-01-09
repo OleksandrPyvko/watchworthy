@@ -1,4 +1,3 @@
-- Feature to change account
 - Sign in with credentials
 - user's collections responsiveness
 - to be able to delete movie from collection (watched or planned to watch)

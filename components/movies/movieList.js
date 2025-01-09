@@ -21,7 +21,6 @@ function MovieList({ searchInput, selectedGenre, page, setLastPage }) {
       try {
         const fetchedMovies = await getMovies(searchInput, selectedGenre, page);
         setMovies(fetchedMovies);
-        console.log(fetchedMovies?.length);
         if (fetchedMovies?.length < 20) {
           setLastPage(true);
         }

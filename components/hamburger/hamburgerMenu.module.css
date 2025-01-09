@@ -23,6 +23,7 @@
 
 .open {
   transform: translateY(0);
+  display: flex;
 }
 
 .nav-button {
