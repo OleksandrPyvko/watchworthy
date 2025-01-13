@@ -1,21 +1,21 @@
-import Image from "next/image";
+import SignInCredentials from "@/components/signin/signInCredentials";
+import SignInGoogle from "@/components/signin/singInGoogle";
 import classes from "./page.module.css";
-import { signInAction } from "@/lib/actions";
-function page() {
+import { auth } from "../auth";
+
+async function page() {
+  const session = await auth();
+  console.log(session?.user, "session");
+
   return (
-    <div className={classes["signin-container"]}>
-      <h2>Please sign in to use this feature</h2>
-      <form action={signInAction}>
-        <button className={classes.signin}>
-          <Image
-            src="https://authjs.dev/img/providers/google.svg"
-            height="24"
-            width="24"
-            alt='Google'
-          />
-          Sign in with Google
-        </button>
-      </form>
+    <div className={classes.container}>
+      <SignInCredentials />
+      <div className={classes.divider}>
+        <hr className={classes.line} />
+        <span className={classes.text}>or</span>
+        <hr className={classes.line} />
+      </div>
+      <SignInGoogle />
     </div>
   );
 }

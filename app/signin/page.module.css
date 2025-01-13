@@ -1,17 +1,32 @@
-.signin {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.container {
+  max-width: 400px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #1d2025c5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "Montserrat", sans-serif;
+  margin-top: 5%;
 }
 
-.signin-container {
+.divider {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
+  margin: 20px 0;
+}
+
+.line {
+  flex: 1;
+  border: none;
+  height: 1px;
+  background-color: #ccc; /* Adjust color to your preference */
+  margin: 0 10px; /* Spacing around the text */
+}
+
+.text {
+  color: #e0e0e0; /* Text color */
+  font-size: 14px; /* Adjust size as needed */
+  font-weight: bold; /* Optional for emphasis */
 }

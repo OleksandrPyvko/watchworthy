@@ -4,7 +4,7 @@
 - sorting for rated movies (maybe for searched too)
 - better styling ???
 -
-
+- MAKE SIGN IN BUTTON SEPARATE AND HANDLE FORM DATA ON SUBMISSION
 
 - deploy
 - change NEXTAUTH_URL
