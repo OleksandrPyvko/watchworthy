@@ -1,4 +1,8 @@
-import { createGuest, getGuest } from "@/lib/data-service";
+import {
+  createGuest,
+  getGuest,
+  getGuestByCredentials,
+} from "@/lib/data-service";
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
 import Credentials from "next-auth/providers/credentials";
@@ -12,19 +16,18 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     Credentials({
       name: "Credentials",
       credentials: {
-        email: { label: "Email", type: "email" },
-        password: { label: "Password", type: "password" },
+        email: {},
+        password: {},
       },
-      async authorize(credentials) {
-        const email = "test@mail.com";
-        const password = "Password123";
-        const name = "Test User";
-
-        if (credentials.email === email && credentials.password === password) {
-          return { email, password, name };
-        } else {
-          throw new Error("Invalid email or password");
+      authorize: async (credentials) => {
+        const user = await getGuestByCredentials(
+          credentials.email,
+          credentials.password
+        );
+        if (!user) {
+          console.log("No user found");
         }
+        return user;
       },
     }),
   ],

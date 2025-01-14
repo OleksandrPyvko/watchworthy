@@ -10,7 +10,6 @@ export default function SignInCredentials() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(email, password, "submitting");
     const result = await signIn("credentials", {
       email,
       password,
@@ -19,7 +18,6 @@ export default function SignInCredentials() {
     if (result.error) {
       // Handle error
       console.error(result.error);
-      console.log("error");
     } else {
       // Redirect or handle successful sign-in
       console.log("Signed in successfully");
@@ -29,30 +27,22 @@ export default function SignInCredentials() {
   return (
     <div>
       <h1>Sign In</h1>
-      <form onSubmit={handleSubmit} className={classes.form}>
-        <label htmlFor="email" className={classes.label}>
-          Email:
-        </label>
+      <form className={classes.form} onSubmit={handleSubmit}>
+        <label className={classes.label}>Email:</label>
         <input
-          id="email"
+          className={classes.input}
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className={classes.input}
-          placeholder="test@mail.com"
         />
-        <label htmlFor="password" className={classes.label}>
-          Password:
-        </label>
+        <label className={classes.label}>Password:</label>
         <input
-          id="password"
+          className={classes.input}
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className={classes.input}
-          placeholder="Password123"
         />
         <button className={classes.button} type="submit">
           Sign In

@@ -1,10 +1,12 @@
-- Sign in with credentials
 - user's collections responsiveness
 - to be able to delete movie from collection (watched or planned to watch)
 - sorting for rated movies (maybe for searched too)
 - better styling ???
 -
-- MAKE SIGN IN BUTTON SEPARATE AND HANDLE FORM DATA ON SUBMISSION
+- image optimization
+- tranzitions
+- schemas for displaying lists of movies (list, tile)
+- account creation
 
 - deploy
 - change NEXTAUTH_URL

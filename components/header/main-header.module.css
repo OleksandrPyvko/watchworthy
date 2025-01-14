@@ -10,12 +10,10 @@
   height: 80px;
   width: 80px;
   position: relative;
-  margin-right: 20px;
 }
 
 .logo {
   display: flex;
-  gap: 0.1rem;
   align-items: center;
   justify-content: center;
   text-decoration: none;
@@ -23,7 +21,8 @@
   font-weight: bold;
   letter-spacing: 0.02rem;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 .image {
@@ -49,7 +48,6 @@
     height: 60px;
     width: 60px;
     position: relative;
-    margin-right: 20px;
   }
 
   .title {

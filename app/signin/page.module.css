@@ -30,3 +30,7 @@
   font-size: 14px; /* Adjust size as needed */
   font-weight: bold; /* Optional for emphasis */
 }
+
+.tiny {
+  font-size: 12px;
+}
