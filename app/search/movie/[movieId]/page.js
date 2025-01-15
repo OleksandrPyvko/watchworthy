@@ -12,6 +12,7 @@ import Image from "next/image";
 import Rating from "@/components/rating/rating-bar";
 
 async function Page({ params }) {
+  
   const { movieId } = await params;
   const session = await auth();
 

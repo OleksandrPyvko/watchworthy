@@ -6,7 +6,7 @@ import Filter from "./filter";
 import classes from "./searchContainer.module.css";
 import PageNav from "./page-nav";
 
-function SearchContainer({ initialData }) {
+function SearchContainer() {
   const [selectedGenre, setSelectedGenre] = useState(null);
   const [searchInput, setSearchInput] = useState("");
   const [page, setPage] = useState(1);
@@ -25,7 +25,7 @@ function SearchContainer({ initialData }) {
         <MovieList
           selectedGenre={selectedGenre}
           searchInput={searchInput}
-          initialData={initialData}
+          
           page={page}
           setLastPage={setLastPage}
         />
