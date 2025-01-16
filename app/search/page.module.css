@@ -4,13 +4,12 @@
   width: 100%;
 }
 
-
-
 .card {
   background-color: rgb(43, 42, 42);
   text-decoration: none;
   color: white;
   padding: 1rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 .card:hover {

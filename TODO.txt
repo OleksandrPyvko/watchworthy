@@ -1,8 +1,7 @@
 - user's collections responsiveness
 - to be able to delete movie from collection (watched or planned to watch)
-- sorting for rated movies (maybe for searched too)
 - better styling ???
--
+- split 'watched' page on components 
 - image optimization
 - tranzitions
 - schemas for displaying lists of movies (list, tile)

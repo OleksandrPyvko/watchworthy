@@ -6,8 +6,8 @@ import classes from "./page.module.css";
 
 async function Page({ searchParams }) {
   const params = await searchParams;
-  const sortParam = params["sort"];
-  console.log(sortParam);
+  const filter = params["sort"];
+  console.log(filter);
   const session = await auth();
   const moviesList = await getWatchedList(session?.user.email);
   const moviesIds = moviesList.map((movie) => movie.movieId);
@@ -19,9 +19,9 @@ async function Page({ searchParams }) {
   });
 
   const sortedList = updatedList.sort((a, b) => {
-    if (sortParam === "rating") {
+    if (filter === "rating") {
       return b.rating - a.rating;
-    } else if (sortParam === "watch-date") {
+    } else if (filter === "watch-date") {
       return new Date(b["created_at"]) - new Date(a["created_at"]);
     } else {
       return updatedList;

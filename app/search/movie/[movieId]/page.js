@@ -12,7 +12,6 @@ import Image from "next/image";
 import Rating from "@/components/rating/rating-bar";
 
 async function Page({ params }) {
-  
   const { movieId } = await params;
   const session = await auth();
 
@@ -59,6 +58,7 @@ async function Page({ params }) {
               src={`https://image.tmdb.org/t/p/w500${poster_path}`}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority={false}
+              quality={50}
             />
           </div>
           <div className={`${session ? classes["button-wrapper"] : ""}`}>

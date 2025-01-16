@@ -11,8 +11,8 @@ async function page() {
   const moviesDetails = await getMoviesDetails(moviesIds);
 
   return (
-    <>
-      <h1>Movies you are planning to watch</h1>
+    <div className={classes.container}>
+      <h2 className={classes.heading}>Movies you are planning to watch</h2>
       <div className={classes["movie-list"]}>
         {moviesDetails.map((movie) => (
           <Link
@@ -38,10 +38,11 @@ async function page() {
             <p>
               <strong>Rating:</strong> {movie.vote_average}
             </p>
+            <div className={classes.delete}>Delete</div>
           </Link>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
