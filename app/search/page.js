@@ -3,7 +3,7 @@ import { Suspense } from "react";
 
 async function MoviesPage() {
   return (
-    <Suspense>
+    <Suspense fallback={<div>Loading...</div>}>
       <SearchContainer />
     </Suspense>
   );

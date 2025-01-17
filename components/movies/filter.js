@@ -43,6 +43,7 @@ function Filter({
 
   function handleChange(e) {
     setSearchInput(e.target.value);
+    setPage(1);
   }
 
   return (

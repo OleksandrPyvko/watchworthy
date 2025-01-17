@@ -12,11 +12,13 @@ html {
   scrollbar-gutter: stable;
   /* scrollbar-width: none; */
   width: 100%;
+  height: 100%;
 }
 
 body {
   margin: auto;
-  background: radial-gradient(#282c34, #282c34);
+  /* background: radial-gradient(#282c34, #282c34); */
+  background: rgb(25, 25, 25);
   width: 100%;
   height: 100%;
 }

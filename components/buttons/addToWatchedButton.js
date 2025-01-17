@@ -6,8 +6,11 @@ function AddToWatchedButton({ movieId, userEmail }) {
       <form action={addToWatchedAction}>
         <input type="hidden" readOnly name="movieId" value={movieId} />
         <input type="hidden" readOnly name="userEmail" value={userEmail} />
-        <button className={`${classes.button} ${classes["button-watched"]}`}>
-          Add to `Watched`
+        {/* <button className={`${classes.button} ${classes["button-watched"]}`}> */}
+        <button
+          className={`${classes.button} ${classes["transparent-button"]}`}
+        >
+          Add to &apos;Watched&apos;
         </button>
       </form>
     </>
