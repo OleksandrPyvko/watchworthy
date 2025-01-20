@@ -1,6 +1,4 @@
 - user's collections responsiveness
-- to be able to delete movie from collection (watched or planned to watch)
-- better styling ???
 - split 'watched' page on components 
 - image optimization
 - tranzitions

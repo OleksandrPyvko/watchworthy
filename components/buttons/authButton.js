@@ -4,6 +4,7 @@ import { signInAction, signOutAction } from "@/lib/actions";
 import classes from "./authButton.module.css";
 import { auth } from "@/app/auth";
 import Image from "next/image";
+import Link from "next/link";
 
 async function AuthButton() {
   const session = await auth();
@@ -14,17 +15,32 @@ async function AuthButton() {
           <button className={classes.signin}>Sign Out</button>
         </form>
       ) : (
-        <form action={signInAction}>
-          <button className={classes.signin}>
-            <Image
+        <Link href="/signin" className={classes.signin}>
+          {/* <Image
               src="https://authjs.dev/img/providers/google.svg"
               height="20"
               width="20"
               alt="Google"
+            /> */}
+          <svg
+            className="w-6 h-6 text-gray-800 dark:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M16 12H4m12 0-4 4m4-4-4-4m3-4h2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-2"
             />
-            Sign in with Google
-          </button>
-        </form>
+          </svg>
+          Sign in
+        </Link>
       )}
     </>
   );

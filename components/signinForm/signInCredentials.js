@@ -4,7 +4,7 @@ import { signIn } from "next-auth/react";
 import { useState } from "react";
 import classes from "./signInCredentials.module.css";
 
-export default function SignInCredentials() {
+export default function SignInCredentials({ error }) {
   const [email, setEmail] = useState("test@mail.com");
   const [password, setPassword] = useState("Password123");
 
@@ -27,6 +27,13 @@ export default function SignInCredentials() {
   return (
     <div>
       <h1>Sign In</h1>
+      {error && (
+        <p style={{ color: "red" }}>
+          {error === "CredentialsSignin"
+            ? "Invalid email or password. Please try again."
+            : "An unexpected error occurred. Please try again later."}
+        </p>
+      )}
       <form className={classes.form} onSubmit={handleSubmit}>
         <label className={classes.label}>Email:</label>
         <input

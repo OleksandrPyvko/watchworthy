@@ -20,14 +20,19 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         password: {},
       },
       authorize: async (credentials) => {
-        const user = await getGuestByCredentials(
-          credentials.email,
-          credentials.password
-        );
-        if (!user) {
-          console.log("No user found");
+        try {
+          const user = await getGuestByCredentials(
+            credentials.email,
+            credentials.password
+          );
+          if (!user) {
+            throw new Error("Invalid email or password");
+          }
+          return user;
+        } catch (error) {
+          console.error(error, "An error occured during login");
+          return null;
         }
-        return user;
       },
     }),
   ],
@@ -51,6 +56,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   },
   pages: {
     signIn: "/signin",
+    error: "/signin",
     // signOut: "/signout",
   },
 });

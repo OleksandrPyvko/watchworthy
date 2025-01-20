@@ -4,9 +4,12 @@ import classes from "./page.module.css";
 import { auth } from "../auth";
 import { redirect } from "next/navigation";
 
-async function Page() {
+async function Page({ searchParams }) {
+  const searchParam = await searchParams;
+  const error = searchParam.error === 'CredentialsSignin' ? searchParam.error : null;
   const session = await auth();
   if (session) redirect("/");
+
 
   return (
     <div className={classes.container}>
@@ -14,7 +17,7 @@ async function Page() {
         <span>Ne alo</span>
       ) : (
         <>
-          <SignInCredentials />
+          <SignInCredentials  error={error}/>
           <div className={classes.divider}>
             <hr className={classes.line} />
             <span className={classes.text}>or</span>
@@ -32,7 +35,6 @@ async function Page() {
             >
               Sign up here
             </a>
-            
           </p>
           <p className={classes.tiny}>(no verification needed)</p>
         </>

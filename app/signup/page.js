@@ -1,5 +1,8 @@
+import SignUpForm from "@/components/signUpForm/signUpForm";
+import classes from "./page.module.css";
+
 function page() {
-  return <div>Sign up form</div>;
+  return <SignUpForm />;
 }
 
 export default page;
