@@ -3,14 +3,18 @@
 import { useState } from "react";
 import classes from "././signUpForm.module.css";
 import { createGuest } from "@/lib/data-service";
+import { useRouter } from "next/navigation";
 
 function SignUpForm() {
+  const router = useRouter();
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
   const [error, setError] = useState("");
 
-  async function onSubmit(e) {
+  async function handleSubmit(e) {
+    e.preventDefault();
     setError("");
 
     if (password !== passwordCheck) {
@@ -22,12 +26,14 @@ function SignUpForm() {
     }
 
     try {
-      const newGuest = { email, password };
+      const newGuest = { email, password, name };
 
       await createGuest(newGuest);
       setEmail("");
       setPassword("");
       setPasswordCheck("");
+      setName("");
+      router.push("/signin");
     } catch (err) {
       console.error(err);
     }
@@ -36,9 +42,17 @@ function SignUpForm() {
   return (
     <div className={classes.container}>
       <h1>Sign Up</h1>
-      {error !== "" && <p>{error}</p>}
+      {error !== "" && <p className={classes.error}>{error}</p>}
 
-      <form className={classes.form}>
+      <form className={classes.form} onSubmit={handleSubmit}>
+        <label className={classes.label}>Your name:</label>
+        <input
+          className={classes.input}
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
         <label className={classes.label}>Email:</label>
         <input
           className={classes.input}
@@ -54,6 +68,7 @@ function SignUpForm() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          minLength={8}
         />
         <label className={classes.label}>Repeat password:</label>
         <input

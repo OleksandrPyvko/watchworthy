@@ -67,3 +67,7 @@
   font-size: 14px; /* Adjust size as needed */
   font-weight: bold; /* Optional for emphasis */
 }
+
+.error {
+  color: #ff4d4d;
+}

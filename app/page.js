@@ -18,7 +18,7 @@ export default function Home() {
         </p>
 
         <Link href="/search" className={classes.explore}>
-          Popular
+          Explore
         </Link>
       </div>
     </div>

@@ -130,7 +130,7 @@ async function Page({ params }) {
 
       <div className={classes.trailer}>
         {trailerKey === null ? (
-          <p style={{ width: "250px" }}>No available trailers 8(</p>
+          <p style={{ width: "250px" }}>No trailers available just yet!</p>
         ) : (
           <div className={classes.trailer}>
             <iframe

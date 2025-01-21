@@ -4,6 +4,7 @@
 - tranzitions
 - schemas for displaying lists of movies (list, tile)
 - account creation
+-add a coment section for movies????
 
 - deploy
 - change NEXTAUTH_URL

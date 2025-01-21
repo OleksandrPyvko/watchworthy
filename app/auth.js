@@ -36,6 +36,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       },
     }),
   ],
+
+  trustHost: true,
   callbacks: {
     authorized({ auth, request }) {
       return !!auth?.user;

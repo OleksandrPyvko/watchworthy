@@ -15,59 +15,61 @@ async function page() {
   const moviesIds = moviesList.map((movie) => movie.movieId);
   const moviesDetails = await getMoviesDetails(moviesIds);
 
-  function handleDelete(email, movieId) {
-    deleteFromWatchLater(email, movieId);
-  }
-
   return (
     <div className={classes.container}>
-      <h2 className={classes.heading}>Movies you are planning to watch</h2>
+      {moviesDetails.length <= 0 ? (
+        <div className={classes["empty-list"]}>
+          <p className={classes["empty-list-text"]}>
+            Oops, no <span className={classes.highlight}>movies</span> here.
+            Guess it’s time to explore!
+          </p>
+          <Link href="/search" className={classes.explore}>
+            +
+          </Link>
+        </div>
+      ) : (
+        <h2 className={classes.heading}>Movies you are planning to watch</h2>
+      )}
+
       <div className={classes["movie-list"]}>
         {moviesDetails.map((movie) => (
-          <>
-            <div key={movie.id} className={classes["movie-card"]}>
-              <form
-                action={deleteFromWatchLaterAction}
-                className={classes["delete-form"]}
-              >
-                <input
-                  readOnly
-                  name="email"
-                  value={session.user.email}
-                  hidden
+          <div key={movie.id} className={classes["movie-card"]}>
+            <form
+              action={deleteFromWatchLaterAction}
+              className={classes["delete-form"]}
+            >
+              <input readOnly name="email" value={session.user.email} hidden />
+              <input readOnly name="movieId" value={movie.id} hidden />
+
+              <button className={classes.delete} type="submit">
+                Delete
+              </button>
+            </form>
+            <Link
+              href={`/search/movie/${movie.id}`}
+              className={classes.card}
+              key={movie.id}
+            >
+              <div className={classes["image-wrapper"]}>
+                <Image
+                  fill
+                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                  alt={movie.title}
+                  className={classes["card-img"]}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  quality={50}
                 />
-                <input readOnly name="movieId" value={movie.id} hidden />
+              </div>
 
-                <button className={classes.delete} type="submit">
-                  Delete
-                </button>
-              </form>
-              <Link
-                href={`/search/movie/${movie.id}`}
-                className={classes.card}
-                key={movie.id}
-              >
-                <div className={classes["image-wrapper"]}>
-                  <Image
-                    fill
-                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                    alt={movie.title}
-                    className={classes["card-img"]}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    quality={50}
-                  />
-                </div>
-
-                <h2>{movie.title}</h2>
-                <p>
-                  <strong>Release Date:</strong> {movie.release_date}
-                </p>
-                <p>
-                  <strong>Rating:</strong> {movie.vote_average}
-                </p>
-              </Link>
-            </div>
-          </>
+              <h2>{movie.title}</h2>
+              <p>
+                <strong>Release Date:</strong> {movie.release_date}
+              </p>
+              <p>
+                <strong>Rating:</strong> {movie.vote_average}
+              </p>
+            </Link>
+          </div>
         ))}
       </div>
     </div>
