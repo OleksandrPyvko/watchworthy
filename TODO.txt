@@ -1,10 +1,6 @@
 - user's collections responsiveness
-- split 'watched' page on components 
-- image optimization
-- tranzitions
 - schemas for displaying lists of movies (list, tile)
-- account creation
--add a coment section for movies????
-
+- add a coment section for movies????
+- add message if WATCHED is empty
 - deploy
 - change NEXTAUTH_URL

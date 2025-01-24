@@ -3,11 +3,11 @@ import { auth } from "../auth";
 import Link from "next/link";
 import Image from "next/image";
 import classes from "./page.module.css";
+import Sort from "@/components/sort/sort";
 
 async function Page({ searchParams }) {
   const params = await searchParams;
   const filter = params["sort"];
-  console.log(filter);
   const session = await auth();
   const moviesList = await getWatchedList(session?.user.email);
   const moviesIds = moviesList.map((movie) => movie.movieId);
@@ -28,19 +28,11 @@ async function Page({ searchParams }) {
     }
   });
 
-  console.log(sortedList);
-
   return (
     <>
-      <h1>Watched movies</h1>
-      <div>
-        <h2>Sort by:</h2>
-        <Link href={`${"/watched?sort=rating"}`}>rating</Link>
-        <br />
-        <Link href={`${"/watched?sort=watch-date"}`}>date watched</Link>
-        <br />
-        <Link href={`${"/watched"}`}>Clear sort</Link>
-      </div>
+      <h1 className={classes.heading}>Watched movies</h1>
+
+      <Sort filter={filter} />
 
       <div className={classes["movie-list"]}>
         {sortedList.map((movie) => (

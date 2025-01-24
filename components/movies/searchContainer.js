@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useState } from "react";
+import { useState } from "react";
 import MovieList from "./movieList";
 import Filter from "./filter";
 import classes from "./searchContainer.module.css";
@@ -21,16 +21,15 @@ function SearchContainer() {
         setSearchInput={setSearchInput}
         setPage={setPage}
       />
-      
-        <MovieList
-          selectedGenre={selectedGenre}
-          searchInput={searchInput}
-          
-          page={page}
-          setLastPage={setLastPage}
-        />
-      
-      <PageNav page={page} setPage={setPage} lastPage={lastPage}/>
+
+      <MovieList
+        selectedGenre={selectedGenre}
+        searchInput={searchInput}
+        page={page}
+        setLastPage={setLastPage}
+      />
+
+      <PageNav page={page} setPage={setPage} lastPage={lastPage} />
     </div>
   );
 }

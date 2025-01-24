@@ -12,6 +12,10 @@ function MovieList({ searchInput, selectedGenre, page, setLastPage }) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  function handleClick() {
+    setIsLoading(true)
+  }
+
   useEffect(() => {
     async function fetchMovies() {
       setIsLoading(true);
@@ -53,6 +57,7 @@ function MovieList({ searchInput, selectedGenre, page, setLastPage }) {
             href={`/search/movie/${movie.id}`}
             className={classes.card}
             key={movie.id}
+            onClick={handleClick}
           >
             <div className={classes["image-wrapper"]}>
               <Image

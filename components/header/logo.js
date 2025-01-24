@@ -1,6 +1,6 @@
 import Image from "next/image";
 import classes from "./main-header.module.css";
-import logo from "@/public/logo22.png";
+import logo from "@/public/logo.png";
 import Link from "next/link";
 
 function Logo() {
@@ -10,10 +10,9 @@ function Logo() {
         <div className={classes.imageContainer}>
           <Image
             src={logo}
-            width={80}
-            height={80}
+            width={100}
+            height={100}
             alt="logo"
-            styles={{ width: "80px", height: "80px" }}
             className={classes.image}
           />
         </div>

@@ -1,0 +1,28 @@
+.sort-options {
+  display: flex;
+  gap: 0.25rem;
+  width: 100%;
+  /* justify-content: center; */
+  align-items: center;
+  padding: 10px;
+}
+
+.option {
+  background-color: #202020;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+
+.active {
+  background-color: #ff8a05;
+  color: #000;
+  font-weight: 700;
+}

@@ -39,8 +39,8 @@ function Rating({ userEmail, movieId, userRating }) {
             viewBox="0 0 24 24"
             width="25px"
             height="30px"
-            fill={i < hovered || i < rating ? "#FFD700" : "none"}
-            stroke={i < hovered || i < rating ? "#FFD700" : "#fff"}
+            fill={i < hovered || i < rating ? "#ffa218" : "none"}
+            stroke={i < hovered || i < rating ? "#ffa218" : "#fff"}
             xmlns="http://www.w3.org/2000/svg"
           >
             <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
