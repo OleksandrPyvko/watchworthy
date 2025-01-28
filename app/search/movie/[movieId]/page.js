@@ -49,7 +49,7 @@ async function Page({ params }) {
   return (
     <div className={classes.details}>
       <div className={classes["details-container"]}>
-        <div>
+        <div className={classes.centered}>
           <div className={classes["image-wrapper"]}>
             <Image
               className={classes["movie-poster"]}

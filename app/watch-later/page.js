@@ -61,7 +61,7 @@ async function page() {
                 />
               </div>
 
-              <h2>{movie.title}</h2>
+              <h2 className={classes["movie-title"]}>{movie.title}</h2>
               <p>
                 <strong>Release Date:</strong> {movie.release_date}
               </p>

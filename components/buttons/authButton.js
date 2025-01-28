@@ -1,9 +1,8 @@
 "use server";
 
-import { signInAction, signOutAction } from "@/lib/actions";
+import { signOutAction } from "@/lib/actions";
 import classes from "./authButton.module.css";
 import { auth } from "@/app/auth";
-import Image from "next/image";
 import Link from "next/link";
 
 async function AuthButton() {
@@ -16,12 +15,6 @@ async function AuthButton() {
         </form>
       ) : (
         <Link href="/signin" className={classes.signin}>
-          {/* <Image
-              src="https://authjs.dev/img/providers/google.svg"
-              height="20"
-              width="20"
-              alt="Google"
-            /> */}
           <svg
             className="w-6 h-6 text-gray-800 dark:text-white"
             aria-hidden="true"

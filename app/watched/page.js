@@ -30,47 +30,59 @@ async function Page({ searchParams }) {
 
   return (
     <>
-      <h1 className={classes.heading}>Watched movies</h1>
-
-      <Sort filter={filter} />
-
-      <div className={classes["movie-list"]}>
-        {sortedList.map((movie) => (
-          <Link
-            href={`/search/movie/${movie.id}`}
-            className={classes.card}
-            key={movie.id}
-          >
-            <div
-              className={`${classes.rating} ${
-                movie.rating <= 4 ? classes["rating-low"] : ""
-              }
+      {sortedList.length <= 0 ? (
+        <div className={classes["empty-list"]}>
+          <p className={classes["empty-list-text"]}>
+            Oops, no <span className={classes.highlight}>movies</span> here.
+            Guess it’s time to explore!
+          </p>
+          <Link href="/search" className={classes.explore}>
+            +
+          </Link>
+        </div>
+      ) : (
+        <>
+          <h1 className={classes.heading}>Watched movies</h1>
+          <Sort filter={filter} />
+          <div className={classes["movie-list"]}>
+            {sortedList.map((movie) => (
+              <Link
+                href={`/search/movie/${movie.id}`}
+                className={classes.card}
+                key={movie.id}
+              >
+                <div
+                  className={`${classes.rating} ${
+                    movie.rating <= 4 ? classes["rating-low"] : ""
+                  }
                 ${movie.rating <= 7 ? classes["rating-mid"] : ""}
                 `}
-            >
-              <div className={classes["rating-holder"]}>{movie.rating}</div>
-            </div>
-            <div className={classes["image-wrapper"]}>
-              <Image
-                fill
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                alt={movie.title}
-                className={classes["card-img"]}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                quality={50}
-              />
-            </div>
+                >
+                  <div className={classes["rating-holder"]}>{movie.rating}</div>
+                </div>
+                <div className={classes["image-wrapper"]}>
+                  <Image
+                    fill
+                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                    alt={movie.title}
+                    className={classes["card-img"]}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    quality={50}
+                  />
+                </div>
 
-            <h2 className={classes.title}>{movie.title}</h2>
-            <p>
-              <strong>Release Date:</strong> {movie.release_date}
-            </p>
-            <p>
-              <strong>Rating:</strong> {movie.vote_average}
-            </p>
-          </Link>
-        ))}
-      </div>
+                <h2 className={classes.title}>{movie.title}</h2>
+                <p>
+                  <strong>Release Date:</strong> {movie.release_date}
+                </p>
+                <p>
+                  <strong>Rating:</strong> {movie.vote_average}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </>
+      )}
     </>
   );
 }

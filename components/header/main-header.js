@@ -8,9 +8,11 @@ function Header({ session }) {
   return (
     <div className={classes.header}>
       <MainHeaderBg />
-      <Logo />
-      <Hamburger session={session} />
-      <Navigation session={session} />
+      <div className={classes.sticky}>
+        <Logo />
+        <Hamburger session={session} />
+        <Navigation session={session} />
+      </div>
     </div>
   );
 }

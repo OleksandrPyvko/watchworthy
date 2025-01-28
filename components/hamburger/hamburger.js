@@ -24,7 +24,7 @@ function Hamburger({ session }) {
           <span className={classes.line}></span>
         </button>
       </div>
-      <HamburgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+      <HamburgerMenu isOpen={isOpen} setIsOpen={setIsOpen} session={session} />
     </>
   );
 }

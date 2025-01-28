@@ -1,6 +1,4 @@
-- user's collections responsiveness
-- schemas for displaying lists of movies (list, tile)
-- add a coment section for movies????
-- add message if WATCHED is empty
+- fix mobile hamburger menu 
+
 - deploy
 - change NEXTAUTH_URL

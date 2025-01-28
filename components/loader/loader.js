@@ -1,6 +1,6 @@
 "use client";
 
-const { ThreeDots, Bars } = require("react-loader-spinner");
+const {  Bars } = require("react-loader-spinner");
 import classes from "./loader.module.css";
 
 export function Loader() {

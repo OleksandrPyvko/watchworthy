@@ -10,7 +10,7 @@
 }
 
 .input {
-  font-family: "Poppins", sans-serif; /* Modern font */
+  font-family: "Poppins", sans-serif; 
 
   background-color: rgba(189, 189, 189, 0.219);
   color: rgb(240, 240, 240);
@@ -19,7 +19,7 @@
   padding: 0.5rem;
   width: 100%;
   max-width: 400px;
-  /* margin: auto; */
+  
 }
 
 .input:focus {
@@ -48,8 +48,6 @@
   border: 1px solid #6c757d;
   border-radius: 20px;
   padding: 4px 12px;
-  /* padding: 8px 16px; */
-  /* font-weight: 600; */
   transition: all 0.3s ease;
   cursor: pointer;
   background-color: #f5a623;
