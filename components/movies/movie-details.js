@@ -78,8 +78,6 @@ async function MovieDetails({ data, trailerKey, movieId, children }) {
           <p style={{ width: "250px" }}>No available trailers 8(</p>
         ) : (
           <iframe
-            // width="560"
-            // height="315"
             width="720"
             height="480"
             src={`https://www.youtube.com/embed/${trailerKey}`}

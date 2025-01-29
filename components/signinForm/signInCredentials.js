@@ -16,10 +16,8 @@ export default function SignInCredentials({ error }) {
     });
 
     if (result.error) {
-      // Handle error
       console.error(result.error);
     } else {
-      // Redirect or handle successful sign-in
       console.log("Signed in successfully");
     }
   };

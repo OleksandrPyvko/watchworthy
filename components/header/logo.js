@@ -14,6 +14,7 @@ function Logo() {
             height={100}
             alt="logo"
             className={classes.image}
+            priority
           />
         </div>
         <p className={classes.title}>Watchworthy</p>

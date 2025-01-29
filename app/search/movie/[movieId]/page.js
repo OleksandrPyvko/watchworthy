@@ -58,7 +58,7 @@ async function Page({ params }) {
               src={`https://image.tmdb.org/t/p/w500${poster_path}`}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority={false}
-              quality={50}
+              quality={80}
             />
           </div>
           <div className={`${session ? classes["button-wrapper"] : ""}`}>

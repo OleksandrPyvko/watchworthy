@@ -1,9 +1,5 @@
 import { auth } from "@/app/auth";
-import {
-  deleteFromWatchLater,
-  getMoviesDetails,
-  getWatchLaterList,
-} from "@/lib/data-service";
+import { getMoviesDetails, getWatchLaterList } from "@/lib/data-service";
 import classes from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";

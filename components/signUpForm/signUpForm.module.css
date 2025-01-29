@@ -58,14 +58,14 @@
   flex: 1;
   border: none;
   height: 1px;
-  background-color: #ccc; /* Adjust color to your preference */
-  margin: 0 10px; /* Spacing around the text */
+  background-color: #ccc; 
+  margin: 0 10px; 
 }
 
 .text {
-  color: #e0e0e0; /* Text color */
-  font-size: 14px; /* Adjust size as needed */
-  font-weight: bold; /* Optional for emphasis */
+  color: #e0e0e0; 
+  font-size: 14px; 
+  font-weight: bold; 
 }
 
 .error {

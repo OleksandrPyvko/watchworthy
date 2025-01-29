@@ -4,8 +4,6 @@ import Image from "next/image";
 import classes from "./hamburgerMenu.module.css";
 import { redirect } from "next/navigation";
 import noProfilePic from "@/public/no-profile-pic.png";
-import AuthButton from "../buttons/authButton";
-import Hamburger from "./hamburger";
 import { signOutAction } from "@/lib/actions";
 import Link from "next/link";
 
@@ -25,14 +23,7 @@ function HamburgerMenu({ isOpen, setIsOpen, session }) {
         isOpen ? classes.open : classes.closed
       }`}
     >
-      {/* <div className={classes.content}> */}
-      <div>
-        <button className={classes["close-menu"]} onClick={toggleMenu}>
-          {" "}
-          - Back -
-        </button>
-        {/* <Hamburger /> */}
-      </div>
+      <div></div>
       <div className={classes.links}>
         <button
           className={classes["nav-button"]}
@@ -70,11 +61,16 @@ function HamburgerMenu({ isOpen, setIsOpen, session }) {
           </form>
         </div>
       ) : (
-        <Link href="/signin" className={classes.signin} onClick={toggleMenu}>
-          Sign in
-        </Link>
+        <div>
+          <Link
+            href="/signin"
+            className={` ${isOpen ? classes.signin : ''}`}
+            onClick={toggleMenu}
+          >
+            Sign in
+          </Link>
+        </div>
       )}
-      {/* </div> */}
     </div>
   );
 }

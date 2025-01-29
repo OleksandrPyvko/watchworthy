@@ -52,8 +52,8 @@
   width: 100%;
   max-width: 800px;
   margin: 1rem auto;
-  padding-bottom: 56.25%;
-  height: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
 }
 
 .trailer iframe {
@@ -62,7 +62,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  border: 0;
+  border: none;
 }
 
 .highlight {
@@ -139,7 +139,7 @@
 
   .details-container {
     flex-direction: column;
-    gap: 2rem;
+    /* gap: 2rem; */
   }
 
   .buttons-wrapper {
